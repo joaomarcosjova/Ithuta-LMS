@@ -19,8 +19,7 @@ import ContactForm from './components/ContactForm'
 
 // vercel page insight & optimization
 import { Analytics } from '@vercel/analytics/react';
-import { SpeedInsights } from "@vercel/speed-insights/react"
-
+import { SpeedInsights } from '@vercel/speed-insights/react';
 
 
 const App = () => {
@@ -58,7 +57,7 @@ const App = () => {
       </Routes>
 
       <Analytics />
-      <SpeedInsights/>
+      <SpeedInsights />
     </div>
   )
 }
