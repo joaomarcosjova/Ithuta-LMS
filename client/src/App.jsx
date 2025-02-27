@@ -16,7 +16,10 @@ import "quill/dist/quill.snow.css";
 import { ToastContainer } from 'react-toastify';
 import About from './components/About'
 import ContactForm from './components/ContactForm'
+
+// vercel page insight & optimization
 import { Analytics } from '@vercel/analytics/react';
+import { SpeedInsights } from "@vercel/speed-insights/react"
 
 
 
@@ -55,6 +58,7 @@ const App = () => {
       </Routes>
 
       <Analytics />
+      <SpeedInsights/>
     </div>
   )
 }
