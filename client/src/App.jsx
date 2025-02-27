@@ -16,6 +16,8 @@ import "quill/dist/quill.snow.css";
 import { ToastContainer } from 'react-toastify';
 import About from './components/About'
 import ContactForm from './components/ContactForm'
+import { Analytics } from '@vercel/analytics/react';
+
 
 
 const App = () => {
@@ -51,6 +53,8 @@ const App = () => {
         </Route>
 
       </Routes>
+
+      <Analytics />
     </div>
   )
 }
