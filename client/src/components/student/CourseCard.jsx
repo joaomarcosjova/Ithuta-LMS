@@ -29,3 +29,5 @@ const CourseCard = ({course}) => {
 }
 
 export default CourseCard
+
+// FIxed video display from the database to the frontend
