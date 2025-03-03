@@ -111,7 +111,7 @@ const Player = () => {
 			<div className="p-4 sm:p-10 flex flex-col-reverse md:grid md:grid-cols-2 gap-10 md:px-36">
 				{/* Left column */}
 				<div className="text-gray-800">
-					<h2 className="text-xl font-semibold">Course Structure</h2>
+					<h2 className="text-xl font-semibold">Estrutura do Curso</h2>
 					<div className="pt-5">
 						{courseData &&  courseData.courseContent.map((chapter, index) => (
 							<div
@@ -135,7 +135,7 @@ const Player = () => {
 										</p>
 									</div>
 									<p className="text-sm md:text-default">
-										{chapter.chapterContent.length} lectures -{" "}
+										{chapter.chapterContent.length} Aulas -{" "}
 										{calculateChapterTime(chapter)}{" "}
 									</p>
 								</div>
@@ -169,7 +169,7 @@ const Player = () => {
 																}
 																className="text-blue-500 cursor-pointer"
 															>
-																Watch
+																Assistir
 															</p>
 														)}
 														<p>
@@ -189,7 +189,7 @@ const Player = () => {
 					</div>
 
             <div className=" flex items-center gap-2 py-3 mt-10 ">
-              <h1 className="text-xl font-bold">Rate this Course:</h1>
+              <h1 className="text-xl font-bold">Avalie este curso:</h1>
               <Rating initialRating={initialRating} onRate={handleRate}/>
             </div>
 
@@ -204,7 +204,7 @@ const Player = () => {
               
               <div className="flex justify-between items-center mt-1">
                 <p>{playerData.chapter}.{playerData.lecture} {playerData.lectureTitle} </p>
-                <button onClick={() => markLectureAsCompleted(playerData.lectureId)} className="text-blue-600">{progressData && progressData.lectureCompleted.includes(playerData.lectureId) ? 'Completed' : 'Mark As Complete'}</button>
+                <button onClick={() => markLectureAsCompleted(playerData.lectureId)} className="text-blue-600">{progressData && progressData.lectureCompleted.includes(playerData.lectureId) ? 'Concluído' : 'Marcar como concluído'}</button>
               </div>
             </div>
           ) 

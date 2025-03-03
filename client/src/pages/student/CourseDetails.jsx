@@ -48,10 +48,10 @@ const CourseDetails = () => {
 	const enrollCourse = async () => {
 		try {
 			if (!userData) {
-				return toast.warn("Login to Enroll!");
+				return toast.warn("Faça login para se inscrever!");
 			}
 			if (isAlreadyEnrolled) {
-				return toast.warn("Already Enrolled");
+				return toast.warn("Já adquirido");
 			}
 
 			const token = await getToken();
@@ -122,23 +122,23 @@ const CourseDetails = () => {
 						</div>
 						<p className="text-blue-600">
 							({courseData.courseRatings.length}{" "}
-							{courseData.courseRatings.length > 1 ? "ratings" : "rating"})
+							{courseData.courseRatings.length > 1 ? "Avaliações" : "Avaliação"})
 						</p>
 
 						<p>
 							{courseData.enrolledStudents.length}{" "}
-							{courseData.enrolledStudents.length > 1 ? "students" : "student"}
+							{courseData.enrolledStudents.length > 1 ? "Estudantes" : "Estudante"}
 						</p>
 					</div>
 					<p className="text-sm">
-						Course by{" "}
+						Criador/a{" "}
 						<span className="text-blue-600 underline">
 							{courseData.educator.name}
 						</span>
 					</p>
 
 					<div className="pt-8 text-gray-800">
-						<h2 className="text-xl font-semibold">Course Structure</h2>
+						<h2 className="text-xl font-semibold">Estrutura do Curso</h2>
 						<div className="pt-5">
 							{courseData.courseContent.map((chapter, index) => (
 								<div
@@ -162,7 +162,7 @@ const CourseDetails = () => {
 											</p>
 										</div>
 										<p className="text-sm md:text-default">
-											{chapter.chapterContent.length} lectures -{" "}
+											{chapter.chapterContent.length} Aulas -{" "}
 											{calculateChapterTime(chapter)}{" "}
 										</p>
 									</div>
@@ -238,7 +238,7 @@ const CourseDetails = () => {
 
 					<div className="py-20 text-sm md:text-default">
 						<h3 className="text-xl font-semibold text-gray-800 ">
-							Course Description
+							Descrição do Curso
 						</h3>
 						<p
 							className="pt-3 rich-text"
@@ -270,7 +270,7 @@ const CourseDetails = () => {
 							/>
 
 							<p className="text-red-500">
-								<span className="font-medium">5 days</span> left at this price!
+								<span className="font-medium">Faltam 3 dias</span> a este preço!
 							</p>
 						</div>
 
@@ -307,7 +307,7 @@ const CourseDetails = () => {
 
 							<div className="flex items-center gap-1">
 								<img src={assets.lesson_icon} alt="lesson_icon" />
-								<p>{calculateNoOfLectures(courseData)} lessons</p>
+								<p>{calculateNoOfLectures(courseData)} Aulas</p>
 							</div>
 						</div>
 
@@ -316,33 +316,33 @@ const CourseDetails = () => {
 							
 						>
 							{isAlreadyEnrolled
-								? <p className="md:mt-6 mt-4 w-full py-3 rounded text-center  bg-blue-600 text-white font-medium"> Already Enrolled </p>
+								? <p className="md:mt-6 mt-4 w-full py-3 rounded text-center  bg-blue-600 text-white font-medium"> Você já está inscrito </p>
 								: courseData.coursePrice -
 										(courseData.discount * courseData.coursePrice) / 100 ===
 								  0.00
-								? <p className="md:mt-6 mt-4 w-full py-3 rounded text-center  bg-blue-600 text-white font-medium"> Free </p>
-								: <button onClick={enrollCourse} className="md:mt-6 mt-4 w-full py-3 rounded text-center  bg-blue-600 text-white font-medium"> Enroll Now</button>}
+								? <p className="md:mt-6 mt-4 w-full py-3 rounded text-center  bg-blue-600 text-white font-medium"> Grátis </p>
+								: <button onClick={enrollCourse} className="md:mt-6 mt-4 w-full py-3 rounded text-center  bg-blue-600 text-white font-medium"> Inscreva-se </button>}
 						</div>
 
 						<div >
 							{courseData.coursePrice -
 								(courseData.discount * courseData.coursePrice) / 100 ===
 							0.00 ? (
-								<p className="md:mt-6 mt-4 w-full text-center py-3 rounded  bg-blue-600 text-white font-medium">Click on Course structure </p>
-							) : isAlreadyEnrolled ? <Link  to="/my-enrollments"><p className="md:mt-6 mt-4 w-full text-center py-3 rounded  bg-blue-600 text-white font-medium">My Enrollments</p> </Link> : ""}
+								<p className="md:mt-6 mt-4 w-full text-center py-3 rounded  bg-blue-600 text-white font-medium">Clique na estrutura do curso </p>
+							) : isAlreadyEnrolled ? <Link  to="/my-enrollments"><p className="md:mt-6 mt-4 w-full text-center py-3 rounded  bg-blue-600 text-white font-medium">Cursos adquiriidos</p> </Link> : ""}
 						</div>
 
 						<div className="pt-6">
 							<p className="md:text-xl text-lg font-medium text-gray-800">
-								What's in the course?{" "}
+							O que você obtém?{" "}
 							</p>
 							<ul className="ml-4 pt-2 text-sm md:text-default list-disc text-gray-500">
-								<li>Lifetime access with free updates.</li>
-								<li>Step-by-step, hands-on project guidance.</li>
-								<li>Downloadable resources and source code.</li>
-								<li>Quizzes to test your knowledge.</li>
-								<li>Certificate of completion.</li>
-								<li>Quizzes to test your knowledge.</li>
+							<li>Acesso vitalício com atualizações gratuitas.</li>
+							<li>Orientação passo a passo e prática do projeto.</li>
+							<li>Recursos para download e código-fonte.</li>
+							<li>Testes para testar os seus conhecimentos.</li>
+							<li>Certificado de conclusão.</li>
+							<li>Testes para testar os seus conhecimentos.</li>
 							</ul>
 						</div>
 					</div>

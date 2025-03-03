@@ -56,8 +56,8 @@ const Navbar = () => {
 				<div className="flex items-center gap-5">
 					{user && (
 						<>
-							<button onClick={becomeEducator}>{isEducator ? "Educator Dashboard" : "Become Educator" }</button>|{" "}
-							<Link to="/my-enrollments">My Enrollments</Link>
+							<button onClick={becomeEducator}>{isEducator ? "Painel do Educador" : "Torne-se Educador" }</button>|{" "}
+							<Link to="/my-enrollments">Cursos Adquiridos</Link>
 						</>
 					)}
 				</div>
@@ -69,7 +69,7 @@ const Navbar = () => {
 						onClick={() => openSignIn()}
 						className="bg-blue-600 text-white px-5 py-2 rounded-full"
 					>
-						Create Account
+						Começar
 					</button>
 				)}
 			</div>
@@ -78,8 +78,8 @@ const Navbar = () => {
 				<div className="flex items-center gap-1 sm:gap-2 max-sm:text-xs">
         {user && (
 						<>
-						<button onClick={becomeEducator}>{isEducator ? "Educator Dashboard" : "Become Educator" }</button>|{" "}
-						<Link to="/my-enrollments">My Enrollments</Link>
+						<button onClick={becomeEducator}>{isEducator ? "Painel do Educador" : "Torne-se Educador" }</button>|{" "}
+						<Link to="/my-enrollments">Cursos Adquiridos</Link>
 					</>
 					)}
 				</div>
