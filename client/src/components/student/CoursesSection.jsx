@@ -23,7 +23,7 @@ const CoursesSection = () => {
 			  à liderança e gestão, os nossos cursos são elaborados para gerar resultados.
 			</p>
 
-			<div className="grid  grid-cols-auto px-3 md:px-0 md:my-16 my-10 gap-4">
+			<div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 px-4 md:px-0 md:my-16 my-10 gap-4">
 				{allCourses.slice(0,24).map((course,index) => <CourseCard key={index} course={course}/> )}
 			</div>
 			<Link to={"/course-list"} onClick={() => scrollTo(0, 0)} className="text-gray-500 border border-gray-500/30 px-10 py-3 rounded">
