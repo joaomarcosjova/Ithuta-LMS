@@ -5,10 +5,10 @@
 
 </div>
 
-# Edemy LMS 🎓 - A Modern Learning Management System
+# Ithuta LMS 🎓 - A Modern Learning Management System
 
 
-Edemy LMS is a full-stack learning management system (LMS) that provides educators and students with a seamless e-learning experience. Built using modern web technologies, it includes user authentication, course management, video streaming, and progress tracking.
+Ithuta LMS is a full-stack learning management system (LMS) that provides educators and students with a seamless e-learning experience. Built using modern web technologies, it includes user authentication, course management, video streaming, and progress tracking.
 
 ## 🚀 Tech Stack
 
