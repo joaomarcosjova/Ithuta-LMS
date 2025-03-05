@@ -144,8 +144,8 @@ Ithuta LMS is a full-stack learning management system (LMS) that provides educat
 
 ### 1️⃣ Clone the Repository
 ```bash
-git clone https://github.com/Gyanthakur/Edemy-LMS.git
-cd edemy-lms
+git clone https://github.com/joaomarcosjova/ithuta-LMS.git
+cd ithuta-lms
 ```
 
 ### 2️⃣ Install Dependencies
