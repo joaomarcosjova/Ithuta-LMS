@@ -214,7 +214,7 @@ Contact Us:  📲<a href="https://wa.me/918957818597?text=Hey%20%F0%9F%91%8B%2C%
 
 
 
-## Thank you for checking out the **Edemy LMS** project! Happy coding! 😊
+## Thank you for checking out the **Ithuta LMS** project! Happy coding! 😊
 
 ---
 ## ⭐ Support
