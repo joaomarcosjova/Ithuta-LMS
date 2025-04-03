@@ -81,17 +81,18 @@ const CourseDetails = () => {
 				return toast.warn("Já adquirido");
 			}
 	
-			// Directly update the frontend state (assuming `setUserData` exists)
+			// Directly enroll the user in the course
 			userData.enrolledCourses.push(courseData._id);
 			setIsAlreadyEnrolled(true);
 	
 			toast.success("Inscrição bem-sucedida!");
-			navigate("/my-enrollments"); // Redirect to My Enrollments page
+			navigate("/my-enrollments"); // Redirect to "My Enrollments"
 	
 		} catch (error) {
-			toast.error("Erro ao inscrever-se. Tente novamente!");
+			toast.error(error.message);
 		}
 	};
+	
 	
 
 	useEffect(() => {
