@@ -72,6 +72,28 @@ const CourseDetails = () => {
 		}
 	};
 
+	const enrollFreeCourse = async () => {
+		try {
+			if (!userData) {
+				return toast.warn("Faça login para se inscrever!");
+			}
+			if (isAlreadyEnrolled) {
+				return toast.warn("Já adquirido");
+			}
+	
+			// Directly update the frontend state (assuming `setUserData` exists)
+			userData.enrolledCourses.push(courseData._id);
+			setIsAlreadyEnrolled(true);
+	
+			toast.success("Inscrição bem-sucedida!");
+			navigate("/my-enrollments"); // Redirect to My Enrollments page
+	
+		} catch (error) {
+			toast.error("Erro ao inscrever-se. Tente novamente!");
+		}
+	};
+	
+
 	useEffect(() => {
 		fetcheCourseData();
 	}, []);
@@ -320,7 +342,7 @@ const CourseDetails = () => {
 								: courseData.coursePrice -
 										(courseData.discount * courseData.coursePrice) / 100 ===
 								  0.00
-								? <p className="md:mt-6 mt-4 w-full py-3 rounded text-center  bg-blue-600 text-white font-medium"> Curso Grátis </p>
+								? <button onClick={enrollFreeCourse} className="md:mt-6 mt-4 w-full py-3 rounded text-center bg-green-600 text-white font-medium"> Curso Gratis </button>
 								: <button onClick={enrollCourse} className="md:mt-6 mt-4 w-full py-3 rounded text-center bg-green-600 text-white font-medium"> Inscreva-se </button>}
 						</div>
 
