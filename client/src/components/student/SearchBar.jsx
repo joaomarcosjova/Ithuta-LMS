@@ -22,7 +22,7 @@ const SearchBar = ({data}) => {
 			<input
         onChange={e => setInput(e.target.value)} value={input}
 				type="text"
-				placeholder="O que você quer aprender?"
+				placeholder="O que queres aprender?"
 				className="w-full h-full outline-none text-gray-500/80"
 			/>
 			<button

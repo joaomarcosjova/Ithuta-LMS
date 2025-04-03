@@ -11,7 +11,7 @@ const About = () => {
 		<>
 			<div className="w-full mx-auto px-6 py-12 bg-gradient-to-b from-cyan-100/40">
 				<h1 className="text-4xl font-bold text-center text-gray-800 mb-6">
-					About Edemy LMS
+					Sobre Ithuta
 				</h1>
 				<p className="text-lg text-gray-600 text-center mb-8">
 					Empowering learners and educators with a seamless online learning
@@ -35,7 +35,7 @@ const About = () => {
 				<div className="grid grid-cols-1 md:grid-cols-3 gap-6">
 					<div className="p-6 border rounded-lg shadow-md text-center">
 						<h3 className="text-xl font-semibold text-gray-700">
-							📚 Quality Courses
+							📚 Cursos de Qualidade
 						</h3>
 						<p className="text-gray-600 mt-2">
 							Learn from expert educators through well-structured and engaging
