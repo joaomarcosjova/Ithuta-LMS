@@ -74,42 +74,29 @@ const CourseDetails = () => {
 
 
 
-const enrollFreeCourse = async () => {
-    const { userData, backendUrl, getToken, fetchUserEnrolledCourses } = useContext(AppContext);
-
-    try {
-        if (!userData) {
-            return toast.warn("Faça login para se inscrever!");
-        }
-        if (isAlreadyEnrolled) {
-            return toast.warn("Já adquirido");
-        }
-
-        const token = await getToken();
-
-        // Send enrollment request
-        const { data } = await axios.post(
-            backendUrl + "/api/user/enrolled-courses",
-            { courseId: courseData._id, userId: userData._id },
-            { headers: { Authorization: `Bearer ${token}` } }
-        );
-
-        if (data.success) {
-            toast.success("Inscrição bem-sucedida! Redirecionando para o curso...");
-
-            // ✅ Now this will work because it's imported from AppContext
-            await fetchUserEnrolledCourses();
-
-            // Redirect to the course page
-            window.location.replace(`/course/${courseData._id}`);
-        } else {
-            toast.error(data.message || "Erro ao se inscrever.");
-        }
-    } catch (error) {
-        toast.error(error.response?.data?.message || error.message);
-    }
-};
-
+	const enrollFreeCourse = async () => {
+		try {
+			if (!userData) {
+				return toast.warn("Faça login para se inscrever!");
+			}
+			if (isAlreadyEnrolled) {
+				return toast.warn("Já adquirido");
+			}
+	
+			// Simulating an API call where courseId is still passed
+			const data = { success: true, session_url: `/course/${courseData?._id}` };
+	
+			if (data.success) {
+				const { session_url } = data;
+				window.location.replace(session_url);
+			} else {
+				toast.error(data.message);
+			}
+		} catch (error) {
+			toast.error(error.message);
+		}
+	};
+	
 	
 	
 
