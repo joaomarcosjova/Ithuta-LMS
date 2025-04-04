@@ -81,17 +81,25 @@ const CourseDetails = () => {
 				return toast.warn("Já adquirido");
 			}
 	
-			// Directly enroll the user in the course
-			userData.enrolledCourses.push(courseData._id);
-			setIsAlreadyEnrolled(true);
+			const token = await getToken();
+			const { data } = await axios.post(
+				backendUrl + "/api/user/enroll", // Updated endpoint for enrollment
+				{ courseId: courseData._id },
+				{ headers: { Authorization: `Bearer ${token}` } }
+			);
 	
-			toast.success("Inscrição bem-sucedida!");
-			navigate("/my-enrollments"); // Redirect to "My Enrollments"
-	
+			if (data.success) {
+				toast.success("Inscrição bem-sucedida!");
+			} else {
+				toast.error(data.message);
+			}
 		} catch (error) {
 			toast.error(error.message);
 		}
 	};
+	
+	
+	
 	
 	
 
