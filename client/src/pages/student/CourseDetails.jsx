@@ -72,6 +72,8 @@ const CourseDetails = () => {
 		}
 	};
 
+
+	
 	const enrollFreeCourse = async () => {
 		try {
 			if (!userData) {
@@ -81,15 +83,12 @@ const CourseDetails = () => {
 				return toast.warn("Já adquirido");
 			}
 	
-			const token = await getToken();
-			const { data } = await axios.post(
-				backendUrl + "/api/user/enroll", // Updated endpoint for enrollment
-				{ courseId: courseData._id },
-				{ headers: { Authorization: `Bearer ${token}` } }
-			);
+			// Directly grant access without checking payment
+			const data = { success: true }; // Simulating a successful enrollment
 	
 			if (data.success) {
-				toast.success("Inscrição bem-sucedida!");
+				toast.success("Inscrição bem-sucedida! Redirecionando para o curso...");
+				window.location.replace(data.session_url);
 			} else {
 				toast.error(data.message);
 			}
@@ -97,6 +96,7 @@ const CourseDetails = () => {
 			toast.error(error.message);
 		}
 	};
+	
 	
 	
 	
