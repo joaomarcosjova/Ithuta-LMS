@@ -73,29 +73,30 @@ const CourseDetails = () => {
 	};
 
 
-	
+
 	const enrollFreeCourse = async () => {
-		try {
-			if (!userData) {
-				return toast.warn("Faça login para se inscrever!");
-			}
-			if (isAlreadyEnrolled) {
-				return toast.warn("Já adquirido");
-			}
-	
-			// Directly grant access without checking payment
-			const data = { success: true }; // Simulating a successful enrollment
-	
-			if (data.success) {
-				toast.success("Inscrição bem-sucedida! Redirecionando para o curso...");
-				window.location.replace(data.session_url);
-			} else {
-				toast.error(data.message);
-			}
-		} catch (error) {
-			toast.error(error.message);
+	try {
+		if (!userData) {
+			return toast.warn("Faça login para se inscrever!");
 		}
-	};
+		if (isAlreadyEnrolled) {
+			return toast.warn("Já adquirido");
+		}
+
+		// Simulating an API call where courseId is still passed
+		const data = { success: true, session_url: `/course/${courseData?._id}` };
+
+		if (data.success) {
+			toast.success("Inscrição bem-sucedida! Redirecionando para o curso...");
+			window.location.replace(data.session_url);
+		} else {
+			toast.error("Ocorreu um erro ao se inscrever.");
+		}
+	} catch (error) {
+		toast.error(error.message);
+	}
+};
+
 	
 	
 	
