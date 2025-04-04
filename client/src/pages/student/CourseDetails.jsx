@@ -74,35 +74,43 @@ const CourseDetails = () => {
 
 
 
-	const enrollFreeCourse = async () => {
-		try {
-			if (!userData) {
-				return toast.warn("Faça login para se inscrever!");
-			}
-			if (isAlreadyEnrolled) {
-				return toast.warn("Já adquirido");
-			}
+const enrollFreeCourse = async () => {
+    const { userData, backendUrl, getToken, fetchUserEnrolledCourses } = useContext(AppContext);
+
+    try {
+        if (!userData) {
+            return toast.warn("Faça login para se inscrever!");
+        }
+        if (isAlreadyEnrolled) {
+            return toast.warn("Já adquirido");
+        }
+
+        const token = await getToken();
+
+        // Send enrollment request
+        const { data } = await axios.post(
+            backendUrl + "/api/user/enrolled-courses",
+            { courseId: courseData._id, userId: userData._id },
+            { headers: { Authorization: `Bearer ${token}` } }
+        );
+
+        if (data.success) {
+            toast.success("Inscrição bem-sucedida! Redirecionando para o curso...");
+
+            // ✅ Now this will work because it's imported from AppContext
+            await fetchUserEnrolledCourses();
+
+            // Redirect to the course page
+            window.location.replace(`/course/${courseData._id}`);
+        } else {
+            toast.error(data.message || "Erro ao se inscrever.");
+        }
+    } catch (error) {
+        toast.error(error.response?.data?.message || error.message);
+    }
+};
+
 	
-			const token = await getToken();
-	
-			// Send enrollment request
-			const { data } = await axios.post(
-				backendUrl + "/api/user/enrolled-courses",
-				{ courseId: courseData._id, userId: userData._id },
-				{ headers: { Authorization: `Bearer ${token}` } }
-			);
-	
-			// Simulate success response and redirect
-			if (data.success) {
-				toast.success("Inscrição bem-sucedida! Redirecionando para o curso...");
-				window.location.replace(`/course/${courseData._id}`);
-			} else {
-				toast.error(data.message || "Erro ao se inscrever.");
-			}
-		} catch (error) {
-			toast.error(error.response?.data?.message || error.message);
-		}
-	};
 	
 
 	
