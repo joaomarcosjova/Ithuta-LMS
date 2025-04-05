@@ -108,7 +108,7 @@ const MyEnrollMents = () => {
 								<td className="px-4 py-3 max-sm:hidden">
 									{progressArray[index] &&
 										`${progressArray[index].lectureCompleted} / ${progressArray[index].totalLectures} `}{" "}
-									<span>Lectures</span>
+									<span>Aulas</span>
 								</td>
 								<td className="px-3 py-3 max-sm:text-right">
 									<button

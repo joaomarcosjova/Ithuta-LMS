@@ -131,7 +131,7 @@ export const purchaseCourse = async (req,res) => {
         }
     };
 
-    
+
 
 
 // Update user Course progress
@@ -143,7 +143,7 @@ export const updateUserCourseProgress = async(req,res)=>{
 
         if(progressData){
             if(progressData.lectureCompleted.includes(lectureId)){
-                return res.json({success: true, message: "Lecture Already Completed"})
+                return res.json({success: true, message: "Aula já concluída"})
             }
             
             progressData.lectureCompleted.push(lectureId)
@@ -158,7 +158,7 @@ export const updateUserCourseProgress = async(req,res)=>{
 
             })
         }
-        res.json({success:true, message: 'Progress Updated'})
+        res.json({success:true, message: 'Progresso atualizado'})
     } catch (error) {
         res.json({success: false, message:error.message})
     }
@@ -215,7 +215,7 @@ export const addUserRating = async (req,res)=>{
 
         // await courseData.save()
         await course.save()
-        res.json({success: true, message:"Rating Added"})
+        res.json({success: true, message:"Obrigado pelo feedback"})
 
     } catch (error) {
         res.json({success: false, message: error.message});
