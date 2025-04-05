@@ -93,8 +93,47 @@ export const purchaseCourse = async (req,res) => {
     }
 }
 
-// Update user Course progress
 
+
+export const enrollFreeCourse = async (req, res) => {
+	try {
+		const { courseId } = req.body;
+		const userId = req.auth.userId;
+
+		const userData = await User.findById(userId);
+		const courseData = await Course.findById(courseId);
+
+		if (!userData || !courseData) {
+			return res.json({ success: false, message: "Dados não encontrados." });
+		}
+
+		if (courseData.discount !== 100) {
+			return res.json({ success: false, message: "Este curso não é gratuito." });
+		}
+
+		if (userData.enrolledCourses.includes(courseId)) {
+			return res.json({ success: false, message: "Você já está inscrito neste curso." });
+		}
+
+		userData.enrolledCourses.push(courseId);
+		await userData.save();
+
+		res.json({
+			success: true,
+			session_url: `/course/${courseId}`,
+			message: "Inscrição gratuita bem-sucedida.",
+		});
+	} catch (error) {
+		console.error("Erro na inscrição gratuita:", error);
+		res.json({ success: false, message: error.message });
+	}
+};
+
+
+
+
+
+// Update user Course progress
 export const updateUserCourseProgress = async(req,res)=>{
     try {
         const userId = req.auth.userId

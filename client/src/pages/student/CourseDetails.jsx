@@ -45,6 +45,8 @@ const CourseDetails = () => {
 		}
 	};
 
+
+
 	const enrollCourse = async () => {
 		try {
 			if (!userData) {
@@ -80,30 +82,32 @@ const CourseDetails = () => {
 				return toast.warn("Faça login para se inscrever!");
 			}
 			if (isAlreadyEnrolled) {
-				return toast.warn("Já adquirido");
+				return toast.warn("Você já está inscrito neste curso.");
 			}
 	
-			// Simulating an API call where courseId is still passed
-			const data = { success: true, session_url: `/course/${courseData?._id}` };
+			// Send POST request to your backend endpoint
+			const { data } = await axios.post(
+				backendUrl + "/api/user/enroll-free-course",
+				{ courseId: courseData._id }
+			);
 	
 			if (data.success) {
-				const { session_url } = data;
-				window.location.replace(session_url);
+				toast.success("Inscrição gratuita bem-sucedida!");
+				window.location.replace(data.session_url);
 			} else {
 				toast.error(data.message);
 			}
 		} catch (error) {
-			toast.error(error.message);
+			toast.error("Erro ao se inscrever: " + error.message);
 		}
 	};
+	
+	  
+	
 	
 	
 	
 
-	
-	
-	
-	
 	
 	
 
@@ -364,7 +368,7 @@ const CourseDetails = () => {
 								(courseData.discount * courseData.coursePrice) / 100 ===
 							0.00 ? (
 								<p className="md:mt-6 mt-4 w-full text-center py-3 rounded  bg-blue-600 text-white font-medium">Clique na estrutura do curso </p>
-							) : isAlreadyEnrolled ? <Link  to="/my-enrollments"><p className="md:mt-6 mt-4 w-full text-center py-3 rounded  bg-blue-600 text-white font-medium">Cursos adquiriidos</p> </Link> : ""}
+							) : isAlreadyEnrolled ? <Link  to="/my-enrollments"><p className="md:mt-6 mt-4 w-full text-center py-3 rounded  bg-blue-600 text-white font-medium">Cursos adquiridos</p> </Link> : ""}
 						</div>
 
 						<div className="pt-6">
