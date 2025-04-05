@@ -361,7 +361,7 @@ const CourseDetails = () => {
 							
 						>
 							{isAlreadyEnrolled
-								? <p className="md:mt-6 mt-4 w-full py-3 rounded text-center  bg-blue-600 text-white font-medium"> Você já está inscrito </p>
+								? <Link  to="/my-enrollments"><p className="md:mt-6 mt-4 w-full text-center py-3 rounded  bg-yellow-600 text-white font-medium">Continuar Com o Curso</p> </Link> 
 								: courseData.coursePrice -
 										(courseData.discount * courseData.coursePrice) / 100 ===
 								  0.00
@@ -369,13 +369,7 @@ const CourseDetails = () => {
 								: <button onClick={enrollCourse} className="md:mt-6 mt-4 w-full py-3 rounded text-center bg-green-600 text-white font-medium"> Inscreva-se </button>}
 						</div>
 
-						<div >
-							{courseData.coursePrice -
-								(courseData.discount * courseData.coursePrice) / 100 ===
-							0.00 ? (
-								<p className="md:mt-6 mt-4 w-full text-center py-3 rounded  bg-blue-600 text-white font-medium">Clique na estrutura do curso </p>
-							) : isAlreadyEnrolled ? <Link  to="/my-enrollments"><p className="md:mt-6 mt-4 w-full text-center py-3 rounded  bg-blue-600 text-white font-medium">Cursos adquiridos</p> </Link> : ""}
-						</div>
+						
 
 						<div className="pt-6">
 							<p className="md:text-xl text-lg font-medium text-gray-800">
