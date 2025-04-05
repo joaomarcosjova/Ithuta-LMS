@@ -95,51 +95,43 @@ export const purchaseCourse = async (req,res) => {
 
 
 
-// Enroll in a free course
-export const enrollFreeCourse = async (req, res) => {
-	try {
-		const { courseId } = req.body;
-		const userId = req.auth.userId;
+    export const enrollFreeCourse = async (req, res) => {
+        try {
+            const { courseId } = req.body;
+            const userId = req.auth.userId;
 
-		const userData = await User.findById(userId);
-		const courseData = await Course.findById(courseId);
+            const user = await User.findById(userId);
+            const course = await Course.findById(courseId);
 
-		// Return early if user or course not found
-		if (!userData || !courseData) {
-			return res.json({ success: false, message: "Dados não encontrados." });
-		}
+            if (!user || !course) {
+                return res.json({ success: false, message: "Usuário ou curso não encontrado." });
+            }
 
-		// Check if course is free
-		if (courseData.discount !== 100) {
-			return res.json({ success: false, message: "Este curso não é gratuito." });
-		}
+            const finalPrice = course.coursePrice - (course.coursePrice * course.discount / 100);
 
-		// Check if already enrolled
-		if (userData.enrolledCourses.includes(courseId)) {
-			return res.json({ success: false, message: "Você já está inscrito neste curso." });
-		}
+            if (finalPrice > 0) {
+                return res.json({ success: false, message: "Este curso não é gratuito." });
+            }
 
-		// Enroll user (same logic used in webhook for paid courses)
-		courseData.enrolledStudents.push(userData._id);
-		await courseData.save();
+            if (user.enrolledCourses.includes(courseId)) {
+                return res.json({ success: false, message: "Você já está matriculado neste curso." });
+            }
 
-		userData.enrolledCourses.push(courseData._id);
-		await userData.save();
+            // Add course to user's enrolled courses
+            user.enrolledCourses.push(courseId);
+            await user.save();
 
-		return res.json({
-			success: true,
-			session_url: `/course/${courseId}`,
-			message: "Inscrição gratuita bem-sucedida",
-		});
-	} catch (error) {
-		console.error("Erro ao inscrever-se:", error);
-		return res.json({ success: false, message: error.message });
-	}
-};
+            // Add user to course's enrolled students
+            course.enrolledStudents.push(userId);
+            await course.save();
 
+            res.json({ success: true, message: "Inscrição realizada com sucesso!" });
+        } catch (error) {
+            res.json({ success: false, message: "Erro ao inscrever-se: " + error.message });
+        }
+    };
 
-
-
+    
 
 
 // Update user Course progress

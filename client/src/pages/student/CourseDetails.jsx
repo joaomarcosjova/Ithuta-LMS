@@ -81,26 +81,32 @@ const CourseDetails = () => {
 			if (!userData) {
 				return toast.warn("Faça login para se inscrever!");
 			}
+	
 			if (isAlreadyEnrolled) {
-				return toast.warn("Você já está inscrito neste curso.");
+				return toast.warn("Já adquirido");
 			}
 	
-			// Send POST request to your backend endpoint
+			const token = await getToken();
 			const { data } = await axios.post(
 				backendUrl + "/api/user/enroll-free-course",
-				{ courseId: courseData._id }
+				{ courseId: courseData._id },
+				{ headers: { Authorization: `Bearer ${token}` } }
 			);
 	
 			if (data.success) {
-				toast.success("Inscrição gratuita bem-sucedida!");
-				window.location.replace(data.session_url);
+				toast.success("Inscrição realizada com sucesso!");
+				// Optionally redirect or refresh
+				setTimeout(() => {
+					window.location.href = "/my-enrollments";
+				}, 1500);
 			} else {
 				toast.error(data.message);
 			}
 		} catch (error) {
-			toast.error("Erro ao se inscrever: " + error.message);
+			toast.error("Erro ao inscrever-se: " + error.message);
 		}
 	};
+	
 	
 	  
 	
