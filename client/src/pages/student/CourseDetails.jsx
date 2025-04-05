@@ -365,8 +365,8 @@ const CourseDetails = () => {
 								: courseData.coursePrice -
 										(courseData.discount * courseData.coursePrice) / 100 ===
 								  0.00
-								? <button onClick={enrollFreeCourse} className="md:mt-6 mt-4 w-full py-3 rounded text-center bg-green-600 text-white font-medium"> Começar Curso Gratis </button>
-								: <button onClick={enrollCourse} className="md:mt-6 mt-4 w-full py-3 rounded text-center bg-green-600 text-white font-medium"> Começar Curso </button>}
+								? <button onClick={enrollFreeCourse} className="md:mt-6 mt-4 w-full py-3 rounded text-center bg-green-600 text-white font-medium"> Acessar Curso Gratis </button>
+								: <button onClick={enrollCourse} className="md:mt-6 mt-4 w-full py-3 rounded text-center bg-green-600 text-white font-medium"> Acessar Curso </button>}
 						</div>
 
 						
