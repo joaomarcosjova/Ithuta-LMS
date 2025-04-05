@@ -361,7 +361,7 @@ const CourseDetails = () => {
 							
 						>
 							{isAlreadyEnrolled
-								? <Link  to="/my-enrollments"><p className="md:mt-6 mt-4 w-full text-center py-3 rounded  bg-yellow-500 text-white font-medium">Retomar Curso</p> </Link> 
+								? <Link  to="/my-enrollments"><p className="md:mt-6 mt-4 w-full text-center py-3 rounded  bg-yellow-600 text-white font-medium">Retomar Curso</p> </Link> 
 								: courseData.coursePrice -
 										(courseData.discount * courseData.coursePrice) / 100 ===
 								  0.00
