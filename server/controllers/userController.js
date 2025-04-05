@@ -95,6 +95,7 @@ export const purchaseCourse = async (req,res) => {
 
 
 
+// Enroll in a free course
 export const enrollFreeCourse = async (req, res) => {
 	try {
 		const { courseId } = req.body;
@@ -103,31 +104,39 @@ export const enrollFreeCourse = async (req, res) => {
 		const userData = await User.findById(userId);
 		const courseData = await Course.findById(courseId);
 
+		// Return early if user or course not found
 		if (!userData || !courseData) {
 			return res.json({ success: false, message: "Dados não encontrados." });
 		}
 
+		// Check if course is free
 		if (courseData.discount !== 100) {
 			return res.json({ success: false, message: "Este curso não é gratuito." });
 		}
 
+		// Check if already enrolled
 		if (userData.enrolledCourses.includes(courseId)) {
 			return res.json({ success: false, message: "Você já está inscrito neste curso." });
 		}
 
-		userData.enrolledCourses.push(courseId);
+		// Enroll user (same logic used in webhook for paid courses)
+		courseData.enrolledStudents.push(userData._id);
+		await courseData.save();
+
+		userData.enrolledCourses.push(courseData._id);
 		await userData.save();
 
-		res.json({
+		return res.json({
 			success: true,
 			session_url: `/course/${courseId}`,
-			message: "Inscrição gratuita bem-sucedida.",
+			message: "Inscrição gratuita bem-sucedida",
 		});
 	} catch (error) {
-		console.error("Erro na inscrição gratuita:", error);
-		res.json({ success: false, message: error.message });
+		console.error("Erro ao inscrever-se:", error);
+		return res.json({ success: false, message: error.message });
 	}
 };
+
 
 
 
