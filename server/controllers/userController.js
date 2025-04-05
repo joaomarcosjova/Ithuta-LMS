@@ -143,7 +143,7 @@ export const updateUserCourseProgress = async(req,res)=>{
 
         if(progressData){
             if(progressData.lectureCompleted.includes(lectureId)){
-                return res.json({success: true, message: "Aula já concluída"})
+                return res.json({success: true, message: "Aula Concluída"})
             }
             
             progressData.lectureCompleted.push(lectureId)
@@ -158,7 +158,7 @@ export const updateUserCourseProgress = async(req,res)=>{
 
             })
         }
-        res.json({success:true, message: 'Progresso atualizado'})
+        res.json({success:true, message: 'Progresso Atualizado'})
     } catch (error) {
         res.json({success: false, message:error.message})
     }
