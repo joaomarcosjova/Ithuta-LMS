@@ -56,6 +56,7 @@ const Navbar = () => {
 				<div className="flex items-center gap-5">
 					{user && (
 						<>
+							{/* <button onClick={becomeEducator}>{isEducator ? "Painel do Educador" : " Torne-se Educador " }</button>|{" "} */}
 							<button onClick={becomeEducator}>{isEducator ? "Painel do Educador" : " " }</button>|{" "}
 							<Link to="/my-enrollments">Cursos Adquiridos</Link>
 						</>
@@ -78,7 +79,8 @@ const Navbar = () => {
 				<div className="flex items-center gap-1 sm:gap-2 max-sm:text-xs">
         {user && (
 						<>
-						<button onClick={becomeEducator}>{isEducator ? "Painel do Educador" : "Torne-se Educador" }</button>|{" "}
+						{/* <button onClick={becomeEducator}>{isEducator ? "Painel do Educador" : "Torne-se Educador" }</button>|{" "} */}
+						<button onClick={becomeEducator}>{isEducator ? "Painel do Educador" : " " }</button>|{" "}
 						<Link to="/my-enrollments">Cursos Adquiridos</Link>
 					</>
 					)}
