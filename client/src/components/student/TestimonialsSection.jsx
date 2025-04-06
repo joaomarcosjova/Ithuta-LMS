@@ -1,40 +1,64 @@
 import React from "react";
-import { assets, dummyTestimonial } from "../../assets/assets";
+import { dummyEvents } from "../../assets/assets";
+import { useUser, useClerk } from "@clerk/clerk-react";
 
-const TestimonialsSection = () => {
-	return (
-		<div className="pb-14 px-8 md:px-0">
-			<h2 className="text-3xl font-medium text-gray-800">Testimonials</h2>
-			<p className="md:text-base text-gray-500 mt-3">
-				Hear from our learners as they share their journeys of transformation,
-				success, and how our <br /> platform has made a difference in their lives.
-			</p>
+const EventsSection = () => {
+  const { user } = useUser();
+  const { openSignIn } = useClerk();
 
-			<div className="grid grid-cols-auto gap-8 mt-14">
-				{dummyTestimonial.map((testimonial, index) => (
-					<div key={index} className="text-sm text-left border border-gray-500/30 pb-6 rounded-lg bg-white shadow-[0px_4px_15px_0px] shadow-black/5 overflow-hidden ">
-						<div className="flex items-center gap-4 px-5 py-4 bg-gray-500/10">
-							<img className="w-12 h-12 rounded-full" src={testimonial.image} alt={testimonial.name} />
-							<div>
-								<h1 className="text-lg font-medium text-gray-800">{testimonial.name}</h1>
-								<p className="text-gray-800/80">{testimonial.role}</p>
-							</div>
-              
-					</div>
-          <div className="p-5 pb-7">
-              <div className="flex gap-0.5">
-                {[...Array(5)].map((_,i)=>(
-                  <img className="h-5" key={i} src={i<Math.floor(testimonial.rating) ? assets.star : assets.star_blank} alt="star" />
-                ))}
+  const handleEventClick = (event) => {
+    if (!user) {
+      openSignIn(); // Same logic as "Começar"
+    } else {
+      window.open(event.ctaLink, "_blank"); // Redirect to event page
+    }
+  };
+
+  return (
+    <section className="pb-16 px-6 md:px-0 text-center">
+      <h2 className="text-3xl font-bold text-gray-800 mb-2">Eventos</h2>
+      <p className="text-gray-500 md:text-base max-w-2xl mx-auto">
+        Participe de experiências únicas criadas para transformar sua jornada de aprendizado.
+      </p>
+
+      <div className="grid md:grid-cols-2 gap-8 mt-12 justify-center">
+        {dummyEvents.map((event, index) => (
+          <div
+            key={index}
+            className="mx-auto max-w-sm border border-gray-200 rounded-xl overflow-hidden shadow-md hover:shadow-lg transition duration-300 bg-white flex flex-col"
+          >
+            <div className="flex justify-center">
+              <img
+                src={event.image}
+                alt={event.title}
+                className="w-full h-64 object-cover hover:scale-105 transition-transform duration-300"
+              />
+            </div>
+
+            <div className="p-6 flex flex-col flex-1 text-left">
+              <h3 className="text-2xl font-semibold text-gray-800">{event.title}</h3>
+              <p className="text-sm text-gray-500 mt-1">{event.date}</p>
+
+              <div className="mt-4 text-sm space-y-1 text-gray-600">
+                <p><span className="font-medium">📍 Local:</span> {event.location}</p>
+                <p><span className="font-medium">🎁 Prêmios:</span> {event.prize}</p>
+                <p><span className="font-medium">👤 Organizador:</span> {event.organizer}</p>
               </div>
-              <p className="text-gray-500 mt-5 ">{testimonial.feedback}</p>
-						</div>
-            <a href="#" className="text-blue-500 underline px-5">Read more</a>
+
+              <p className="mt-4 text-gray-600 text-sm flex-1">{event.description}</p>
+
+              <button
+                onClick={() => handleEventClick(event)}
+                className="mt-6 px-4 py-2 rounded-lg bg-blue-600 hover:bg-blue-700 text-white font-medium transition"
+              >
+                {event.ctaText}
+              </button>
+            </div>
           </div>
-				))}
-			</div>
-		</div>
-	);
+        ))}
+      </div>
+    </section>
+  );
 };
 
-export default TestimonialsSection;
+export default EventsSection;

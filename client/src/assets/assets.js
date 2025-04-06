@@ -766,3 +766,31 @@ export const dummyCourses = [
         "courseThumbnail": "https://img.youtube.com/vi/WbV3zRgpw_E/maxresdefault.jpg"
     }
 ]
+
+// src/assets/assets.js
+
+export const dummyEvents = [
+    {
+      title: "Workshop de React",
+      description: "Aprenda React do zero com especialistas e domine a criação de SPAs.",
+      date: "20 de Abril, 2025",
+      location: "São Paulo, Brasil",
+      prize: "Certificado + Brindes",
+      organizer: "Ithuta Academy",
+      image: "/src/assets/event-1.avif",
+      ctaText: "Participar",
+      ctaLink: "https://example.com/event/react"
+    },
+    {
+      title: "Bootcamp de Node.js",
+      description: "Explore o backend com Node.js em um evento 100% prático.",
+      date: "27 de Abril, 2025",
+      location: "Online",
+      prize: "Certificado + Vagas de Estágio",
+      organizer: "Ithuta Dev Lab",
+      image: "/src/assets/event-2.avif",
+      ctaText: "Participar",
+      ctaLink: "https://example.com/event/node"
+    }
+  ];
+  
