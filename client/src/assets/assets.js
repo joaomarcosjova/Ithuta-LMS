@@ -769,28 +769,30 @@ export const dummyCourses = [
 
 // src/assets/assets.js
 
+import event1 from "../assets/event-1.avif";
+import event2 from "../assets/event-2.avif";
+
 export const dummyEvents = [
-    {
-      title: "Workshop de React",
-      description: "Aprenda React do zero com especialistas e domine a criação de SPAs.",
-      date: "20 de Abril, 2025",
-      location: "São Paulo, Brasil",
-      prize: "Certificado + Brindes",
-      organizer: "Ithuta Academy",
-      image: "/src/assets/event-1.avif",
-      ctaText: "Participar",
-      ctaLink: "https://example.com/event/react"
-    },
-    {
-      title: "Bootcamp de Node.js",
-      description: "Explore o backend com Node.js em um evento 100% prático.",
-      date: "27 de Abril, 2025",
-      location: "Online",
-      prize: "Certificado + Vagas de Estágio",
-      organizer: "Ithuta Dev Lab",
-      image: "/src/assets/event-2.avif",
-      ctaText: "Participar",
-      ctaLink: "https://example.com/event/node"
-    }
-  ];
-  
+  {
+    title: "Workshop de React",
+    description: "Aprenda React do zero com especialistas e domine a criação de SPAs.",
+    date: "20 de Abril, 2025",
+    location: "São Paulo, Brasil",
+    prize: "Certificado + Brindes",
+    organizer: "Ithuta Academy",
+    image: event1, // ✅ use imported image
+    ctaText: "Participar",
+    ctaLink: "https://example.com/event/react"
+  },
+  {
+    title: "Bootcamp de Node.js",
+    description: "Explore o backend com Node.js em um evento 100% prático.",
+    date: "27 de Abril, 2025",
+    location: "Online",
+    prize: "Certificado + Vagas de Estágio",
+    organizer: "Ithuta Dev Lab",
+    image: event2, // ✅ use imported image
+    ctaText: "Participar",
+    ctaLink: "https://example.com/event/node"
+  }
+];
