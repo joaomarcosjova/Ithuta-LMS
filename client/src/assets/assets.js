@@ -796,3 +796,51 @@ export const dummyEvents = [
     ctaLink: "https://example.com/event/node"
   }
 ];
+
+
+
+
+
+
+import mentor1 from "./mentor1.avif";
+import mentor2 from "./mentor2.avif";
+import mentor3 from "./mentor3.avif";
+
+export const dummyMentors = [
+  {
+    name: "João Silva",
+    description: "Hello! Want to glide your next job interview with confidence? Feeling burned out and searching for strategies to handle stress and thrive? I’m Kaitlin Hello! Want to glide your next job interview with confidence? Feeling burned out and searching for strategies to handle stress and thrive? I’m Kaitlin...",
+    subjects: ["JavaScript", "React", "Node.js", "HTML", "CSS", "TypeScript", "GraphQL", "MongoDB", "Express", "Redux", "Next.js", "Tailwind"],
+    price: 50,
+    rating: 5.0,
+    reviews: 269,
+    image: mentor1,
+  },
+  {
+    name: "Maria Fernandes",
+    description: "Professora apaixonada por ciência de dados e IA, com ampla experiência prática e didática.",
+    subjects: ["Python", "Pandas", "NumPy", "Machine Learning", "Data Visualization", "Scikit-learn", "Jupyter", "Matplotlib", "Seaborn", "Deep Learning"],
+    price: 65,
+    rating: 4.9,
+    reviews: 312,
+    image: mentor2,
+  },
+  {
+    name: "Carlos Souza",
+    description: "Mentor dedicado em linguagens de programação e preparação para entrevistas técnicas.",
+    subjects: ["C++", "Java", "C#", "Go", "Rust", "DSA", "OOP", "System Design", "Debugging", "Competitive Programming"],
+    price: 45,
+    rating: 4.8,
+    reviews: 188,
+    image: mentor3,
+  },
+  {
+    name: "Carlos Souza",
+    description: "Mentor dedicado em linguagens de programação e preparação para entrevistas técnicas.",
+    subjects: ["C++", "Java", "C#", "Go", "Rust", "DSA", "OOP", "System Design", "Debugging", "Competitive Programming"],
+    price: 45,
+    rating: 4.8,
+    reviews: 188,
+    image: mentor3,
+  },
+];

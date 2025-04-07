@@ -2,6 +2,7 @@ import React from 'react'
 import Hero from '../../components/student/Hero'
 import Companies from '../../components/student/Companies'
 import CoursesSection from '../../components/student/CoursesSection'
+import MentorsSection from '../../components/student/MentorsSection'
 import EventsSection from '../../components/student/EventsSection'
 import CallToAction from '../../components/student/CallToAction'
 import Footer from '../../components/student/Footer'
@@ -13,6 +14,7 @@ const Home = () => {
       <Hero/>
       <Companies/>
       <CoursesSection/>
+      <MentorsSection/>
       <EventsSection/>
       <CallToAction/>
       <Footer/>
