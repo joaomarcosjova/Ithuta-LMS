@@ -801,46 +801,48 @@ export const dummyEvents = [
 
 
 
-
 import mentor1 from "./mentor1.avif";
 import mentor2 from "./mentor2.avif";
 import mentor3 from "./mentor3.avif";
+import mentor4 from "./mentor4.jpg";
+
+
 
 export const dummyMentors = [
   {
-    name: "João Silva",
-    description: "Hello! Want to glide your next job interview with confidence? Feeling burned out and searching for strategies to handle stress and thrive? I’m Kaitlin Hello! Want to glide your next job interview with confidence? Feeling burned out and searching for strategies to handle stress and thrive? I’m Kaitlin...",
-    subjects: ["JavaScript", "React", "Node.js", "HTML", "CSS", "TypeScript", "GraphQL", "MongoDB", "Express", "Redux", "Next.js", "Tailwind"],
-    price: 50,
+    name: "João Marcos",
+    description: "Engenheiro de software de alto impacto. Quer bater um papo e evoluir a sua careira?",
+    subjects: ["HTML", "CSS", "Python", "JavaScript", "Cybersec", "Ingles para Dev", "Preparatório Para Entrevista de Emprego "],
+    price: 10,
     rating: 5.0,
     reviews: 269,
+    image: mentor4,
+  },
+  {
+    name: "Mateus Coelho",
+    description: "Olá, eu sou um professor apaixonado por ciência de dados e IA, com ampla experiência prática e didática.",
+    subjects: ["Python", "Pandas", "NumPy", "Machine Learning", "Data Visualization", "Scikit-learn", "Jupyter"],
+    price: 10,
+    rating: 4.9,
+    reviews: 312,
     image: mentor1,
   },
   {
-    name: "Maria Fernandes",
-    description: "Professora apaixonada por ciência de dados e IA, com ampla experiência prática e didática.",
-    subjects: ["Python", "Pandas", "NumPy", "Machine Learning", "Data Visualization", "Scikit-learn", "Jupyter", "Matplotlib", "Seaborn", "Deep Learning"],
-    price: 65,
-    rating: 4.9,
-    reviews: 312,
+    name: "Ana Ferreira",
+    description: "Mentora apaixonada por desenvolvimento front-end, UX/UI e liderança de equipes técnicas.",
+    subjects: ["C++", "Java", "C#", "Go", "Rust", "DSA", "OOP", "System Design", "Debugging"],
+    price: 10,
+    rating: 4.8,
+    reviews: 188,
     image: mentor2,
   },
   {
-    name: "Carlos Souza",
-    description: "Mentor dedicado em linguagens de programação e preparação para entrevistas técnicas.",
-    subjects: ["C++", "Java", "C#", "Go", "Rust", "DSA", "OOP", "System Design", "Debugging", "Competitive Programming"],
-    price: 45,
-    rating: 4.8,
-    reviews: 188,
-    image: mentor3,
-  },
-  {
-    name: "Carlos Souza",
-    description: "Mentor dedicado em linguagens de programação e preparação para entrevistas técnicas.",
-    subjects: ["C++", "Java", "C#", "Go", "Rust", "DSA", "OOP", "System Design", "Debugging", "Competitive Programming"],
-    price: 45,
-    rating: 4.8,
-    reviews: 188,
+    name: "João Lima",
+    description: "Especialista em back-end, bancos de dados e arquitetura de sistemas escaláveis.",
+    subjects: ["Node.js", "Express", "MongoDB", "PostgreSQL", "System Design", "APIs", "DevOps", "Docker"],
+    price: 10,
+    rating: 4.7,
+    reviews: 172,
     image: mentor3,
   },
 ];

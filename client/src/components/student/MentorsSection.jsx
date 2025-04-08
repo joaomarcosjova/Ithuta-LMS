@@ -1,25 +1,29 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useUser, useClerk } from "@clerk/clerk-react";
 import { dummyMentors } from "../../assets/assets";
 import { FaStar } from "react-icons/fa";
+import { getCalApi } from "@calcom/embed-react";
 
 const MentorsSection = () => {
   const { user } = useUser();
   const { openSignIn } = useClerk();
 
-  const handleBookMentor = (mentor) => {
-    if (!user) {
-      openSignIn();
-    } else {
-      const returnUrl = encodeURIComponent("https://cal.com/ithuta/secret"); // your custom success URL
-      const paypalUrl = `https://www.paypal.com/cgi-bin/webscr?cmd=_xclick&business=marcosjova3@gmail.com&amount=${mentor.price}&currency_code=USD&item_name=Mentoria%20com%20${encodeURIComponent(mentor.name)}&return=${returnUrl}`;
-      window.open(paypalUrl, "_blank");
-    }
+  useEffect(() => {
+    (async function () {
+      const cal = await getCalApi({ namespace: "mentors" });
+      cal("ui", { hideEventTypeDetails: false, layout: "month_view" });
+    })();
+  }, []);
+
+  const handleUnauthenticatedClick = () => {
+    openSignIn();
   };
 
   return (
     <section className="px-4 sm:px-6 lg:px-12 py-16">
-      <h2 className="text-3xl font-medium text-gray-800 mb-6 text-center">Encontre seu Mentor</h2>
+      <h2 className="text-3xl font-medium text-gray-800 mb-6 text-center">
+        Encontre seu Mentor
+      </h2>
 
       <p className="text-gray-500 text-sm sm:text-base max-w-2xl mx-auto mt-3 px-4 text-center sm:text-center">
         Encontre os nossos mentores especializados e agende sessões individuais.
@@ -37,7 +41,7 @@ const MentorsSection = () => {
               <img
                 src={mentor.image}
                 alt={mentor.name}
-                className="rounded-xl w-full h-48 object-cover md:h-full"
+                className="rounded-xl w-full h-64 sm:h-64 md:h-full object-cover"
               />
             </div>
 
@@ -71,16 +75,27 @@ const MentorsSection = () => {
                 </div>
               </div>
 
-              <div className="mt-6">
-                <div className="text-lg font-semibold text-gray-800 mb-2">
-                  {mentor.price.toFixed(2)} USD / hora
+              <div className="mt-6 flex items-center justify-between gap-4">
+                <div className="text-lg font-semibold text-gray-800">
+                  {mentor.price.toFixed(0)} USD / hora
                 </div>
-                <button
-                  onClick={() => handleBookMentor(mentor)}
-                  className="w-full bg-blue-600 hover:bg-blue-700 text-white py-2 rounded-xl transition font-semibold"
-                >
-                  Reservar
-                </button>
+                {user ? (
+                  <button
+                    className="min-w-[140px] bg-blue-600 hover:bg-blue-700 text-white py-2 px-6 rounded-xl transition font-semibold"
+                    data-cal-namespace="mentors"
+                    data-cal-link="ithuta/mentors"
+                    data-cal-config='{"layout":"month_view"}'
+                  >
+                    Reservar
+                  </button>
+                ) : (
+                  <button
+                    onClick={handleUnauthenticatedClick}
+                    className="min-w-[140px] bg-blue-600 hover:bg-blue-700 text-white py-2 px-6 rounded-xl transition font-semibold"
+                  >
+                    Reservar
+                  </button>
+                )}
               </div>
             </div>
           </div>
