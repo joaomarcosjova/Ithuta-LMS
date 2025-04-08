@@ -1,19 +1,73 @@
-import React from 'react'
-import { assets } from '../../assets/assets'
+import React, { useState, useRef } from 'react';
+import { motion } from 'framer-motion';
+import { assets } from '../../assets/assets';
+
+const logos = [
+  assets.python,
+  assets.javascript,
+  assets.react,
+  assets.excel,
+  assets.java,
+  assets.kotlin,
+  assets.node,
+  assets.sql,
+  assets.swift,
+  assets.typescript,
+];
 
 const Companies = () => {
-  return (
-    <div className='pt-16'>
-      <p className='text-base text-gray-500'>Trusted by learners from</p>
-      <div className='flex flex-wrap items-center justify-center gap-6 md:gap-16 md:mt-10 mt-5'>
-        <img src={assets.microsoft_logo} alt="microsoft_logo" className='w-20 md:w-28' />
-        <img src={assets.walmart_logo} alt="walmart_logo" className='w-20 md:w-28' />
-        <img src={assets.accenture_logo} alt="accenture_logo" className='w-20 md:w-28' />
-        <img src={assets.adobe_logo} alt="adobe_logo" className='w-20 md:w-28' />
-        <img src={assets.paypal_logo} alt="paypal_logo" className='w-20 md:w-28' />
-      </div>
-    </div>
-  )
-}
+  const [dragProgress, setDragProgress] = useState(0);
+  const dragRef = useRef(0);
 
-export default Companies
+  const handleDrag = (_, info) => {
+    const distance = Math.abs(info.delta.x) + Math.abs(info.delta.y);
+    dragRef.current = Math.min(dragRef.current + distance, 2000); // slowed down
+    setDragProgress(dragRef.current);
+  };
+
+  const revealText = "Jesus Cristo te Ama";
+  const revealFraction = dragProgress / 2000; // slower reveal
+  const revealedLength = Math.floor(revealFraction * revealText.length);
+  const revealedText = revealText.substring(0, revealedLength);
+
+  return (
+    <div className="pt-16 px-4 md:px-12">
+      <p className="text-center text-base text-gray-500 mb-6">
+        Move a imagem, descubra um segredo
+      </p>
+
+      {/* Logo Grid */}
+      <div className="grid grid-cols-5 gap-4 md:gap-10 justify-items-center">
+        {logos.map((logo, index) => (
+          <motion.div
+            key={index}
+            drag
+            dragConstraints={{ top: -80, bottom: 80, left: -80, right: 80 }}
+            dragElastic={0.3}
+            onDrag={handleDrag}
+            whileHover={{ scale: 1.05, rotate: 3 }}
+            whileTap={{ scale: 0.95, rotate: -3 }}
+            className="cursor-grab active:cursor-grabbing"
+          >
+            <img
+              src={logo}
+              alt={`logo-${index}`}
+              className="w-12 sm:w-14 md:w-16 lg:w-20 pointer-events-none transition-transform"
+            />
+          </motion.div>
+        ))}
+      </div>
+
+      {/* Progressive Reveal Message */}
+      <motion.p
+        className="text-center mt-8 text-lg md:text-xl font-semibold text-blue-600"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: revealedText.length > 0 ? 1 : 0 }}
+      >
+        {revealedText}
+      </motion.p>
+    </div>
+  );
+};
+
+export default Companies;

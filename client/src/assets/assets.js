@@ -4,11 +4,7 @@ import search_icon from './search_icon.svg'
 import cross_icon from './cross_icon.svg'
 import upload_area from './upload_area.svg'
 import sketch from './sktech.svg'
-import microsoft_logo from './microsoft_logo.svg'
-import walmart_logo from './walmart_logo.svg'
-import accenture_logo from './accenture_logo.svg'
-import adobe_logo from './adobe_logo.svg'
-import paypal_logo from './paypal_logo.svg'
+
 import course_1_thumbnail from './course_1.png'
 import course_2_thumbnail from './course_2.png'
 import course_3_thumbnail from './course_3.png'
@@ -42,6 +38,19 @@ import profile_img from './profile_img.png'
 import profile_img2 from './profile_img2.png'
 import profile_img3 from './profile_img3.png'
 import lesson_icon from './lesson_icon.svg'
+   
+
+import excel from './excel.svg'
+import java from './java.svg'
+import javascript from './javascript.svg'
+import kotlin from './kotlin.svg'
+import node from './node.svg'
+import python from './python.svg'
+import react from './react.svg'
+import sql from './sql.svg'
+import swift from './swift.svg'
+import typescript from './typescript.svg'
+
 
 import abhishek from './abhishek.JPG'
 import shreyansh from './shreyansh.JPG'
@@ -51,11 +60,6 @@ export const assets = {
     logo,
     search_icon,
     sketch,
-    microsoft_logo,
-    walmart_logo,
-    accenture_logo,
-    adobe_logo,
-    paypal_logo,
     course_1_thumbnail,
     course_2_thumbnail,
     course_3_thumbnail,
@@ -91,7 +95,19 @@ export const assets = {
     profile_img3,
     play_icon,
     blue_tick_icon,
-    lesson_icon
+    lesson_icon,
+    excel,
+    java,
+    javascript,
+    kotlin, 
+    node,
+    python,
+    react,
+    sql,
+    swift,
+    typescript
+
+
 }
 
 export const dummyEducatorData = {
@@ -103,8 +119,6 @@ export const dummyEducatorData = {
     "updatedAt": "2024-12-12T10:56:17.930Z",
     "__v": 0
 }
-
-
 
 
 export const dummyTestimonial = [
@@ -812,7 +826,7 @@ export const dummyMentors = [
   {
     name: "João Marcos",
     description: "Engenheiro de software de alto impacto. Quer bater um papo e evoluir a sua careira?",
-    subjects: ["HTML", "CSS", "Python", "JavaScript", "Cybersec", "Ingles para Dev", "Preparatório Para Entrevista de Emprego "],
+    subjects: ["HTML", "CSS", "Python", "JavaScript", "Cybersec", "Ingles para Dev", "Entrevistas de Emprego "],
     price: 10,
     rating: 5.0,
     reviews: 269,
