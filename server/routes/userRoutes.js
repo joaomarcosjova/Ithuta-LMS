@@ -3,22 +3,20 @@ import {
   addUserRating,
   getUserCourseProgress,
   getUserData,
+  purchaseCourse,
+  updateUserCourseProgress,
   userEnrolledCourses,
-  enrollFreeCourse,
-  updateUserCourseProgress
+  enrollFreeCourse,  // <-- Import the new controller function
 } from "../controllers/userController.js";
-import { handlePayPalWebhook } from "../controllers/webhook.js";
 
 const userRouter = express.Router();
 
-userRouter.get("/data", getUserData);
-userRouter.get("/enrolled-courses", userEnrolledCourses);
-userRouter.post("/enroll-free-course", enrollFreeCourse);
-userRouter.post("/update-course-progress", updateUserCourseProgress);
-userRouter.post("/get-course-progress", getUserCourseProgress);
-userRouter.post("/add-rating", addUserRating);
-
-// ✅ Include webhook route (PayPal)
-userRouter.post("/paypal-webhook", handlePayPalWebhook);
+userRouter.get('/data', getUserData);
+userRouter.get('/enrolled-courses', userEnrolledCourses);
+userRouter.post('/purchase', purchaseCourse);
+userRouter.post('/enroll-free-course', enrollFreeCourse); // <-- Add the new route
+userRouter.post('/update-course-progress', updateUserCourseProgress);
+userRouter.post('/get-course-progress', getUserCourseProgress);
+userRouter.post('/add-rating', addUserRating);
 
 export default userRouter;
