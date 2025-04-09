@@ -1,6 +1,33 @@
 import React from "react";
 import { dummyEvents } from "../../assets/assets";
 import { useUser, useClerk } from "@clerk/clerk-react";
+import { motion } from "framer-motion";
+
+const containerVariants = {
+  hidden: { opacity: 0, y: 50 },
+  show: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      staggerChildren: 0.2,
+      delayChildren: 0.3,
+      duration: 0.6,
+      ease: "easeOut",
+    },
+  },
+};
+
+const cardVariants = {
+  hidden: { opacity: 0, y: 30 },
+  show: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      type: "spring",
+      stiffness: 100,
+    },
+  },
+};
 
 const EventsSection = () => {
   const { user } = useUser();
@@ -8,56 +35,77 @@ const EventsSection = () => {
 
   const handleEventClick = (event) => {
     if (!user) {
-      openSignIn(); // Same logic as "Começar"
+      openSignIn();
     } else {
-      window.open(event.ctaLink, "_blank"); // Redirect to event page
+      window.open(event.ctaLink, "_blank");
     }
   };
 
   return (
-    <section className="pb-16 px-6 md:px-0 text-center">
-      <h2 className="text-3xl font-bold text-gray-800 mb-2">Eventos</h2>
-      <p className="text-gray-500 md:text-base max-w-2xl mx-auto">
-        Participe de experiências únicas criadas para transformar sua jornada de aprendizado.
-      </p>
+    <motion.section
+      initial="hidden"
+      animate="show"
+      variants={containerVariants}
+      className="pb-20 px-4 md:px-10 text-center bg-white"
+    >
+      <motion.h2
+        className="text-4xl font-extrabold text-gray-900 mb-4"
+        initial={{ opacity: 0, y: -20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6 }}
+      >
+        🌟 Eventos em Destaque
+      </motion.h2>
 
-      <div className="grid md:grid-cols-2 gap-8 mt-12 justify-center">
+      <motion.p
+        className="text-gray-600 md:text-lg max-w-2xl mx-auto mb-12"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ delay: 0.3, duration: 0.6 }}
+      >
+        Descubra experiências exclusivas criadas para transformar sua jornada educacional.
+      </motion.p>
+
+      <motion.div
+        variants={containerVariants}
+        className="grid md:grid-cols-2 gap-10 max-w-6xl mx-auto"
+      >
         {dummyEvents.map((event, index) => (
-          <div
+          <motion.div
             key={index}
-            className="mx-auto max-w-sm border border-gray-200 rounded-xl overflow-hidden shadow-md hover:shadow-lg transition duration-300 bg-white flex flex-col"
+            variants={cardVariants}
+            whileHover={{ scale: 1.02 }}
+            className="relative h-[340px] rounded-2xl shadow-xl overflow-hidden border border-gray-200 bg-cover bg-center flex items-end text-left"
+            style={{ backgroundImage: `url(${event.image})` }}
           >
-            <div className="flex justify-center">
-              <img
-                src={event.image}
-                alt={event.title}
-                className="w-full h-64 object-cover hover:scale-105 transition-transform duration-300"
-              />
-            </div>
+            {/* Overlay gradient */}
+            <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent z-0" />
 
-            <div className="p-6 flex flex-col flex-1 text-left">
-              <h3 className="text-2xl font-semibold text-gray-800">{event.title}</h3>
-              <p className="text-sm text-gray-500 mt-1">{event.date}</p>
+            {/* Content over image */}
+            <div className="relative z-10 p-6 w-full text-white flex flex-col justify-between h-full">
+              <div className="space-y-2">
+                <div className="flex flex-wrap gap-2 text-xs font-semibold">
+                  <span className="bg-white/20 rounded-full px-3 py-1">{event.date}</span>
+                  <span className="bg-white/20 rounded-full px-3 py-1">{event.location}</span>
+                </div>
 
-              <div className="mt-4 text-sm space-y-1 text-gray-600">
-                <p><span className="font-medium">📍 Local:</span> {event.location}</p>
-                <p><span className="font-medium">🎁 Prêmios:</span> {event.prize}</p>
-                <p><span className="font-medium">👤 Organizador:</span> {event.organizer}</p>
+                <h3 className="text-4xl font-bold">{event.title}</h3>
+                <p className="text-sm text-white/90 line-clamp-3">{event.description}</p>
               </div>
 
-              <p className="mt-4 text-gray-600 text-sm flex-1">{event.description}</p>
-
-              <button
+              <motion.button
                 onClick={() => handleEventClick(event)}
-                className="mt-6 px-4 py-2 rounded-lg bg-blue-600 hover:bg-blue-700 text-white font-medium transition"
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                className="mt-4 w-full py-2 rounded-lg bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white font-semibold transition"
               >
                 {event.ctaText}
-              </button>
+              </motion.button>
             </div>
-          </div>
+          </motion.div>
         ))}
-      </div>
-    </section>
+      </motion.div>
+    </motion.section>
   );
 };
 

@@ -15,7 +15,7 @@ const logos = [
   assets.typescript,
 ];
 
-const Companies = () => {
+const DraggableStack = () => {
   const [dragProgress, setDragProgress] = useState(0);
   const dragRef = useRef(0);
 
@@ -45,8 +45,9 @@ const Companies = () => {
             dragConstraints={{ top: -80, bottom: 80, left: -80, right: 80 }}
             dragElastic={0.3}
             onDrag={handleDrag}
-            whileHover={{ scale: 1.05, rotate: 3 }}
-            whileTap={{ scale: 0.95, rotate: -3 }}
+            whileHover={{ scale: 1.1 }}
+            whileTap={{ scale: 0.95 }}
+            whileDrag={{ scale: 0.9, rotate: 10 }}
             className="cursor-grab active:cursor-grabbing"
           >
             <img
@@ -70,4 +71,4 @@ const Companies = () => {
   );
 };
 
-export default Companies;
+export default DraggableStack;
