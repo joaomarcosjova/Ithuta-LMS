@@ -1,85 +1,56 @@
+// src/assets/assets.js
+
+import eventbg1 from "../assets/event-bg1.jpg";
+import eventbg2 from "../assets/event-bg2.jpg";
+// import eventbg3 from "../assets/event-bg3.jpg";
+// import eventbg4 from "../assets/event-bg4.jpg";
+
+
+
+
 export const dummyChallenges = [
-    {
-      id: 1,
-      title: "Soma de Dois Números",
-      language: "JavaScript",
-      difficulty: "Fácil",
-      description: "Dado dois números inteiros, retorne a sua soma.",
-      starterCode: `function soma(a, b) {\n  // escreva sua solução aqui\n}`,
-      testCases: [
-        { input: [1, 2], expected: 3 },
-        { input: [-5, 5], expected: 0 },
-      ],
-      solution: `function soma(a, b) {\n  return a + b;\n}`,
-      tags: ["math", "intro"],
-    },
-    {
-      id: 2,
-      title: "Verificador de Palíndromo",
-      language: "Python",
-      difficulty: "Médio",
-      description: "Verifique se uma string é um palíndromo (lê-se igual de frente para trás).",
-      starterCode: `def is_palindrome(s):\n    # escreva sua solução aqui\n    pass`,
-      testCases: [
-        { input: ["radar"], expected: true },
-        { input: ["hello"], expected: false },
-      ],
-      solution: `def is_palindrome(s):\n    return s == s[::-1]`,
-      tags: ["string", "palindrome"],
-    },
-    {
-      id: 3,
-      title: "Fatorial Recursivo",
-      language: "Java",
-      difficulty: "Fácil",
-      description: "Implemente uma função recursiva que calcule o fatorial de um número.",
-      starterCode: `public class Solution {\n  public static int factorial(int n) {\n    // escreva sua solução aqui\n  }\n}`,
-      testCases: [
-        { input: [5], expected: 120 },
-        { input: [0], expected: 1 },
-      ],
-      solution: `public class Solution {\n  public static int factorial(int n) {\n    if (n <= 1) return 1;\n    return n * factorial(n - 1);\n  }\n}`,
-      tags: ["recursion", "math"],
-    },
-    {
-      id: 4,
-      title: "Contar Caracteres Únicos",
-      language: "JavaScript",
-      difficulty: "Médio",
-      description: "Conte quantos caracteres únicos existem em uma string.",
-      starterCode: `function contarCaracteresUnicos(str) {\n  // implemente aqui\n}`,
-      testCases: [
-        { input: ["abcabc"], expected: 3 },
-        { input: ["aabbcc"], expected: 3 },
-      ],
-      solution: `function contarCaracteresUnicos(str) {\n  return new Set(str).size;\n}`,
-      tags: ["set", "string"],
-    },
-    {
-      id: 5,
-      title: "Sequência de Fibonacci",
-      language: "Python",
-      difficulty: "Médio",
-      description: "Dado um número N, retorne os N primeiros números da sequência de Fibonacci.",
-      starterCode: `def fibonacci(n):\n    # implemente aqui\n    pass`,
-      testCases: [
-        { input: [5], expected: [0, 1, 1, 2, 3] },
-      ],
-      solution: `def fibonacci(n):\n    seq = [0, 1]\n    for i in range(2, n):\n        seq.append(seq[-1] + seq[-2])\n    return seq[:n]`,
-      tags: ["loop", "array"],
-    },
-    {
-      id: 6,
-      title: "Ordenar Lista de Objetos",
-      language: "JavaScript",
-      difficulty: "Difícil",
-      description: "Dada uma lista de objetos com a propriedade 'idade', ordene do menor para o maior.",
-      starterCode: `const ordenarPorIdade = (pessoas) => {\n  // escreva aqui\n};`,
-      testCases: [
-        { input: [[{ idade: 30 }, { idade: 20 }, { idade: 40 }]], expected: [{ idade: 20 }, { idade: 30 }, { idade: 40 }] },
-      ],
-      solution: `const ordenarPorIdade = (pessoas) => {\n  return pessoas.sort((a, b) => a.idade - b.idade);\n};`,
-      tags: ["array", "sort", "objects"],
-    }
-  ];
-  
+  {
+    title: "Entrevista Front-end",
+    description: "Prepare-se para as entrevistas com perguntas técnicas reais usadas por empresas líderes!",
+    date: "ReactJs",
+    location: "São Paulo, Brasil",
+    image: eventbg1,
+    ctaText: "Participar",
+    ctaLink: "https://example.com/event/react",
+    speakerName: "Ana Souza",
+    speakerTitle: "Desenvolvedora Front-end Sênior",
+  },
+  {
+    title: "Entrevista Back-end",
+    description: "Prepare-se para as entrevistas com perguntas técnicas reais usadas por empresas líderes!",
+    date: "27 de Abril, 2025",
+    location: "Online",
+    image: eventbg2,
+    ctaText: "Participar",
+    ctaLink: "https://example.com/event/node",
+    speakerName: "Lucas Fernandes",
+    speakerTitle: "Engenheiro de Software Backend",
+  },
+  // {
+  //   title: "Bootcamp de Node.js",
+  //   description: "Explore o backend com Node.js em um evento 100% prático.",
+  //   date: "27 de Abril, 2025",
+  //   location: "Online",
+  //   image: eventbg3,
+  //   ctaText: "Participar",
+  //   ctaLink: "https://example.com/event/node",
+  //   speakerName: "Carla Lima",
+  //   speakerTitle: "Especialista em APIs e Microserviços",
+  // },
+  // {
+  //   title: "Workshop de React",
+  //   description: "Aprenda React do zero com especialistas e domine a criação de SPAs.",
+  //   date: "20 de Abril, 2025",
+  //   location: "São Paulo, Brasil",
+  //   image: eventbg4,
+  //   ctaText: "Participar",
+  //   ctaLink: "https://example.com/event/react",
+  //   speakerName: "Ana Souza",
+  //   speakerTitle: "Desenvolvedora Front-end Sênior",
+  // },
+];

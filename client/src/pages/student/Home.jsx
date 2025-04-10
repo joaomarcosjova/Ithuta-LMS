@@ -3,8 +3,7 @@ import Hero from '../../components/student/Hero'
 import DraggableStack from '../../components/student/DraggableStack'
 import CoursesSection from '../../components/student/CoursesSection'
 import MentorsSection from '../../components/student/MentorsSection'
-// import EventsSection from '../../components/student/EventsSection'
-// import ChallengesSection from '../../components/student/ChallengesSection'
+import ChallengesSection from '../../components/student/ChallengesSection'
 import CallToAction from '../../components/student/CallToAction'
 import Footer from '../../components/student/Footer'
 
@@ -16,8 +15,7 @@ const Home = () => {
       <DraggableStack/>
       <CoursesSection/>
       <MentorsSection/>
-      {/* <ChallengesSection/>
-      <EventsSection/> */}
+      <ChallengesSection/>
       <CallToAction/>
       <Footer/>
     </div>
