@@ -96,8 +96,14 @@ const ChallengesSection = () => {
             <div className="relative z-10 p-6 w-full text-white flex flex-col justify-between h-full">
               <div className="space-y-2">
                 <div className="flex flex-wrap gap-2 text-xs font-semibold">
-                  <span className="bg-white/20 rounded-full px-3 py-1">{event.date}</span>
-                  <span className="bg-white/20 rounded-full px-3 py-1">{event.location}</span>
+                {event.techstack.slice(0, 10).map((techstack, idx) => (
+                    <span
+                      key={idx}
+                      className="bg-white/20 px-3 py-1 text-xs rounded-xl"
+                    >
+                      {techstack}
+                    </span>
+                  ))}
                 </div>
 
                 <h3 className="text-5xl sm:text-4xl md:text-5xl lg:text-7xl font-bold leading-tight">

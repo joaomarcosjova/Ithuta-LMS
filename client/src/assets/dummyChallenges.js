@@ -12,8 +12,7 @@ export const dummyChallenges = [
   {
     title: "Entrevista Front-end",
     description: "Prepare-se para as entrevistas com perguntas técnicas reais usadas por empresas líderes!",
-    date: "ReactJs",
-    location: "São Paulo, Brasil",
+    techstack:["ReactJs", "JavaScript", "TypeScript"],
     image: eventbg1,
     ctaText: "Participar",
     ctaLink: "https://example.com/event/react",
@@ -23,8 +22,7 @@ export const dummyChallenges = [
   {
     title: "Entrevista Back-end",
     description: "Prepare-se para as entrevistas com perguntas técnicas reais usadas por empresas líderes!",
-    date: "27 de Abril, 2025",
-    location: "Online",
+    techstack: ["Python", "PhP", "JavaScript"],
     image: eventbg2,
     ctaText: "Participar",
     ctaLink: "https://example.com/event/node",
