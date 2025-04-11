@@ -21,18 +21,18 @@ const Footer = () => {
 
           {/* Social Icons */}
           <div className="flex justify-center gap-6 text-xl text-gray-800">
-            <a href="#"><FaFacebookF className="hover:text-white transition" /></a>
-            <a href="#"><FaInstagram className="hover:text-white transition" /></a>
-            <a href="#"><FaXTwitter className="hover:text-white transition" /></a>
-            <a href="#"><FaGithub className="hover:text-white transition" /></a>
-            <a href="#"><FaYoutube className="hover:text-white transition" /></a>
+            <a href="#"><FaFacebookF className="hover:text-blue-600 transition" /></a>
+            <a href="#"><FaInstagram className="hover:text-blue-600 transition" /></a>
+            <a href="#"><FaXTwitter className="hover:text-blue-600 transition" /></a>
+            <a href="#"><FaGithub className="hover:text-blue-600 transition" /></a>
+            <a href="#"><FaYoutube className="hover:text-blue-600 transition" /></a>
           </div>
 
           {/* Navigation Links */}
           <ul className="flex flex-wrap justify-center gap-6 text-sm text-blue-600">
-            <li><Link to="/course-list" className="hover:text-white">Cursos</Link></li>
-            <li><Link to="/mentors-list" className="hover:text-white">Mentores</Link></li>
-            <li><Link to="/privacy-policy" className="hover:text-white">Política de Privacidade</Link></li>
+            <li><Link to="/course-list" className="hover:text-gray-800">Cursos</Link></li>
+            <li><Link to="/mentors-list" className="hover:text-gray-800">Mentores</Link></li>
+            <li><Link to="/privacy-policy" className="hover:text-gray-800">Política de Privacidade</Link></li>
           </ul>
 
         </div>
