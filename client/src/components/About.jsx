@@ -1,92 +1,66 @@
 import React from "react";
 import Footer from "./student/Footer";
-import { useClerk, useUser } from "@clerk/clerk-react";
-import { Link } from "react-router-dom";
 
-const About = () => {
-	const { user } = useUser();
-	const { openSignIn } = useClerk();
-	
+const PrivacyPolicy = () => {
+
 	return (
 		<>
-			<div className="w-full mx-auto px-6 py-12 bg-gradient-to-b from-cyan-100/40">
-				<h1 className="text-4xl font-bold text-center text-gray-800 mb-6">
-					Sobre Ithuta
-				</h1>
-				<p className="text-lg text-gray-600 text-center mb-8">
-					Empowering learners and educators with a seamless online learning
-					experience.
-				</p>
+			<div className="max-w-4xl mx-auto px-4 py-10 text-gray-800 space-y-6">
+      <h2 className="text-3xl font-bold">Política de Privacidade</h2>
 
-				{/* Section: Our Mission */}
-				<div className=" p-8 rounded-lg shadow-lg mb-8">
-					<h2 className="text-2xl font-semibold text-gray-700 mb-4">
-						Our Mission
-					</h2>
-					<p className="text-gray-600">
-						At Edemy LMS, we strive to make education accessible and engaging
-						for everyone. Our platform bridges the gap between students and
-						educators by providing high-quality courses, interactive learning
-						tools, and an intuitive user experience.
-					</p>
-				</div>
+      <p>
+        A sua privacidade é muito importante para nós. É política do <strong>Ithuta</strong> respeitar a sua privacidade em relação a qualquer informação que possamos coletar durante o uso da nossa plataforma <a href="https://ithuta.vercel.app" className="text-blue-600 underline">ithuta.vercel.app</a>, onde oferecemos cursos online, mentorias individuais e simulações de entrevistas técnicas.
+      </p>
 
-				{/* Section: Why Choose Us */}
-				<div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-					<div className="p-6 border rounded-lg shadow-md text-center">
-						<h3 className="text-xl font-semibold text-gray-700">
-							📚 Cursos de Qualidade
-						</h3>
-						<p className="text-gray-600 mt-2">
-							Learn from expert educators through well-structured and engaging
-							courses.
-						</p>
-					</div>
-					<div className="p-6 border rounded-lg shadow-md text-center">
-						<h3 className="text-xl font-semibold text-gray-700">
-							🚀 Interactive Learning
-						</h3>
-						<p className="text-gray-600 mt-2">
-							Our platform includes real-time progress tracking, quizzes, and
-							hands-on projects.
-						</p>
-					</div>
-					<div className="p-6 border rounded-lg shadow-md text-center">
-						<h3 className="text-xl font-semibold text-gray-700">
-							🌍 Global Access
-						</h3>
-						<p className="text-gray-600 mt-2">
-							Learn anytime, anywhere, on any device with a seamless experience.
-						</p>
-					</div>
-				</div>
+      <p>
+        Solicitamos informações pessoais apenas quando realmente precisamos delas para fornecer uma melhor experiência de aprendizado. Isso pode incluir, por exemplo, seu nome, e-mail, progresso nos cursos, agendamentos de mentoria ou participação em desafios técnicos. Todas as coletas são feitas de forma transparente, com seu consentimento e sempre com o objetivo de oferecer um serviço mais personalizado e eficiente.
+      </p>
 
-				{/* Section: Join Us */}
-				<div className="mt-12 text-center">
-					<h2 className="text-2xl font-semibold text-gray-700 mb-4">
-						Join Edemy LMS Today
-					</h2>
-					<p className="text-gray-600 mb-6">
-						Whether you're a student looking to enhance your skills or an
-						educator wanting to share knowledge, Edemy LMS is the perfect
-						platform for you.
-					</p>
+      <p>
+        As informações coletadas são mantidas apenas pelo tempo necessário para entregar nossos serviços com qualidade. Utilizamos boas práticas de segurança para proteger seus dados contra acessos não autorizados, perda ou modificação indevida.
+      </p>
 
-					{user ? (
-						<Link to="/" className="px-6 py-3 bg-blue-600 text-white font-semibold rounded-lg shadow-md hover:bg-blue-700 transition duration-300"> Get Startd</Link>
-					) : (
-						<button
-							onClick={() => openSignIn()}
-							className="px-6 py-3 bg-blue-600 text-white font-semibold rounded-lg shadow-md hover:bg-blue-700 transition duration-300"
-						>
-							Get Started
-						</button>
-					)}
-				</div>
-			</div>
+      <p>
+        Nunca compartilhamos suas informações pessoais com terceiros, exceto quando for exigido por lei. Seus dados estão seguros conosco e são usados exclusivamente para melhorar sua jornada na plataforma.
+      </p>
+
+      <p>
+        O site do Ithuta pode conter links para outros sites ou plataformas externas, como serviços de videoconferência ou ferramentas de pagamento. Recomendamos que leia as políticas de privacidade desses serviços, pois não temos controle sobre suas práticas.
+      </p>
+
+      <p>
+        Você pode optar por não fornecer certas informações, entendendo que isso pode limitar sua experiência em funcionalidades como agendamento de mentorias ou participação em entrevistas simuladas.
+      </p>
+
+      <p>
+        O uso contínuo da nossa plataforma será considerado como aceitação das nossas práticas relacionadas à privacidade e tratamento de dados. Em caso de dúvidas, estamos à disposição para conversar e esclarecer qualquer ponto.
+      </p>
+
+      <h3 className="text-2xl font-semibold pt-6">Compromisso do Usuário</h3>
+
+      <p>
+        O usuário do Ithuta compromete-se a utilizar a plataforma de forma ética e responsável, respeitando os seguintes princípios:
+      </p>
+
+      <ul className="list-disc list-inside space-y-2">
+        <li>A) Não utilizar os conteúdos da plataforma para fins ilegais ou que contrariem a boa fé e a ordem pública;</li>
+        <li>B) Não disseminar qualquer tipo de conteúdo ofensivo, racista, discriminatório ou que infrinja direitos humanos;</li>
+        <li>C) Não tentar comprometer a integridade dos sistemas da plataforma, incluindo tentativas de introdução de vírus, engenharia reversa ou acesso indevido a informações de outros usuários.</li>
+      </ul>
+
+      <h3 className="text-2xl font-semibold pt-6">Mais informações</h3>
+
+      <p>
+        Esperamos ter esclarecido os principais pontos sobre como lidamos com seus dados. Nosso objetivo é sempre proporcionar um ambiente de aprendizado seguro, confiável e acolhedor.
+      </p>
+
+      <p>
+        Esta política entra em vigor a partir de 11 de abril de 2025.
+      </p>
+    </div>
 			<Footer />
 		</>
 	);
 };
 
-export default About;
+export default PrivacyPolicy;

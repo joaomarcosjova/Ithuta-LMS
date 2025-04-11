@@ -45,7 +45,7 @@ const App = () => {
         <Route path='/player/:courseId' element={<Player/>} />
         <Route path='/loading/:path' element={<Loading/>} />
 
-        <Route path='/about' element={<About/>} />
+        <Route path='/privacy-policy' element={<About/>} />
         <Route path='/contact' element={<ContactForm/>} />
 
 

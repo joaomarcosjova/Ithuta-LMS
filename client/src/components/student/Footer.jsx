@@ -32,8 +32,7 @@ const Footer = () => {
           <ul className="flex flex-wrap justify-center gap-6 text-sm text-blue-600">
             <li><Link to="/course-list" className="hover:text-white">Cursos</Link></li>
             <li><Link to="/mentors-list" className="hover:text-white">Mentores</Link></li>
-            <li><Link to="/press" className="hover:text-white">Press</Link></li>
-            <li><Link to="/partners" className="hover:text-white">Partners</Link></li>
+            <li><Link to="/privacy-policy" className="hover:text-white">Política de Privacidade</Link></li>
           </ul>
 
         </div>

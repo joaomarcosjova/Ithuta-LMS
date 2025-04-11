@@ -26,7 +26,7 @@ const CallToAction = () => {
 							Começar
 						</button>
             )}
-        <Link to="/about">
+        <Link to="/privacy-policy">
         <button className='flex items-center gap-2'>Saiba mais <img src={assets.arrow_icon} alt="arrow_icon" /></button>
         </Link>
       </div>
