@@ -41,7 +41,7 @@ const MentorsList = () => {
         <div className="text-center mb-10">
           <h2 className="text-3xl font-medium text-gray-800">Encontre seu Mentor</h2>
           <p className="text-gray-500 mt-3 max-w-2xl mx-auto text-sm sm:text-base">
-            Filtre mentores por nome ou assunto abaixo e agende uma sessão individual com especialistas.
+            Filtre mentores por nome ou assunto abaixo e agende uma sessão individual com um especialista.
           </p>
         </div>
 
