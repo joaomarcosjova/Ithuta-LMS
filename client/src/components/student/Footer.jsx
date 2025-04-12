@@ -21,11 +21,10 @@ const Footer = () => {
 
           {/* Social Icons */}
           <div className="flex justify-center gap-6 text-xl text-gray-800">
-            <a href="#"><FaFacebookF className="hover:text-blue-600 transition" /></a>
-            <a href="#"><FaInstagram className="hover:text-blue-600 transition" /></a>
-            <a href="#"><FaXTwitter className="hover:text-blue-600 transition" /></a>
+            <a href="https://www.linkedin.com/in/joaomarcosjova/"><FaFacebookF className="hover:text-blue-600 transition" /></a>
+            <a href="https://instagram.com/ithuta.app"><FaInstagram className="hover:text-blue-600 transition" /></a>
             <a href="#"><FaGithub className="hover:text-blue-600 transition" /></a>
-            <a href="#"><FaYoutube className="hover:text-blue-600 transition" /></a>
+            <a href="https://youtu.be/m2uSJS9Wx9Y"><FaYoutube className="hover:text-blue-600 transition" /></a>
           </div>
 
           {/* Navigation Links */}
