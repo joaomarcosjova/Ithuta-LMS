@@ -192,14 +192,7 @@ This project is licensed under the [MIT License](LICENSE).
 
 ---
 
-## 🎯 Contributors
-
-👤 **Gyan Pratap Singh** – *Developer & Maintainer*  
-📧 Contact: [marcosjova3@gmail.com](mailto:marcosjova3@gmail.com)  
-🔗 GitHub: [@joaomarcosjova](https://github.com/joaomarcosjova/)  
-
-
----
+ 
 
 
 
