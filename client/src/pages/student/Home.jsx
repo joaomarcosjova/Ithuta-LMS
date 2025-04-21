@@ -6,15 +6,13 @@ import MentorsSection from '../../components/student/MentorsSection'
 import ChallengesSection from '../../components/student/ChallengesSection'
 import CallToAction from '../../components/student/CallToAction'
 import Footer from '../../components/student/Footer'
-import InstallPrompt from "./components/InstallPrompt";
 
 
 const Home = () => {
   return (
     <div className='flex flex-col items-center space-y-7 text-center'>
       
-      <InstallPrompt/>
-      
+
       <Hero/>
       <DraggableStack/>
       <CoursesSection/>
