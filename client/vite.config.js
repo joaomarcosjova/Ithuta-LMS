@@ -13,7 +13,7 @@ export default defineConfig({
         short_name: 'Ithuta',
         description: 'A modern LMS platform for learning and growth',
         theme_color: '#1e40af',
-        background_color: '#ffffff',
+        background_color: '#000',
         display: 'standalone',
         start_url: '/',
         scope: '/',
