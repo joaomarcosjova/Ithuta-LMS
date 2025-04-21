@@ -17,8 +17,8 @@ const InstallPrompt = () => {
       setDeferredPrompt(e);
       if (!isStandalone && isMobile) {
         setShowBanner(true);
-        setTimeout(() => setAnimate(true), 100); // trigger animation
-        setTimeout(() => setShowBanner(false), 12000); // auto-hide after 12s
+        setTimeout(() => setAnimate(true), 200); // trigger animation
+        // setTimeout(() => setShowBanner(false), 12000); // auto-hide after 12s
       }
     };
 
