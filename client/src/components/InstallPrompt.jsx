@@ -55,16 +55,16 @@ const InstallPrompt = () => {
         </div>
         <div className="flex items-center gap-2">
           <button
-            onClick={handleInstall}
-            className="bg-white text-blue-600 text-xs font-medium px-3 py-1 rounded-lg hover:bg-blue-100 transition"
-          >
-            Instalar
-          </button>
-          <button
             onClick={dismissBanner}
             className="text-white text-xs px-2 py-1 hover:bg-blue-700 rounded transition"
           >
             Fechar
+          </button>
+          <button
+            onClick={handleInstall}
+            className="bg-white text-blue-600 text-xs font-medium px-3 py-1 rounded-lg hover:bg-blue-100 transition"
+          >
+            Instalar
           </button>
         </div>
       </div>
