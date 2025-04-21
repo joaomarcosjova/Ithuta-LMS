@@ -18,7 +18,7 @@ import { ToastContainer } from 'react-toastify';
 import About from './components/About'
 import ContactForm from './components/ContactForm'
 
-
+import InstallPrompt from './components/InstallPrompt';
 
 // vercel page insight & optimization
 import { Analytics } from '@vercel/analytics/react';
@@ -35,6 +35,7 @@ const App = () => {
   return (
     <div className='text-default min-h-screen bg-white'>
       <ToastContainer />
+      {!isEducatorRoute && <InstallPrompt/>}
       {!isEducatorRoute && <Navbar/> }
       
       <Routes>
