@@ -5,7 +5,9 @@ const InstallPrompt = () => {
   const [showBanner, setShowBanner] = useState(false);
 
   useEffect(() => {
-    const isStandalone = window.matchMedia("(display-mode: standalone)").matches || window.navigator.standalone;
+    const isStandalone =
+      window.matchMedia("(display-mode: standalone)").matches ||
+      window.navigator.standalone;
 
     const isMobile = /Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
 
@@ -20,7 +22,10 @@ const InstallPrompt = () => {
     window.addEventListener("beforeinstallprompt", handleBeforeInstallPrompt);
 
     return () => {
-      window.removeEventListener("beforeinstallprompt", handleBeforeInstallPrompt);
+      window.removeEventListener(
+        "beforeinstallprompt",
+        handleBeforeInstallPrompt
+      );
     };
   }, []);
 
@@ -29,9 +34,9 @@ const InstallPrompt = () => {
       deferredPrompt.prompt();
       const choiceResult = await deferredPrompt.userChoice;
       if (choiceResult.outcome === "accepted") {
-        console.log("User accepted the A2HS prompt");
+        console.log("✅ User accepted the install prompt");
       } else {
-        console.log("User dismissed the A2HS prompt");
+        console.log("❌ User dismissed the install prompt");
       }
       setDeferredPrompt(null);
       setShowBanner(false);
@@ -43,7 +48,7 @@ const InstallPrompt = () => {
   if (!showBanner) return null;
 
   return (
-    <div className="fixed bottom-4 left-4 right-4 z-50 bg-blue-600 text-white p-4 rounded-2xl shadow-lg flex flex-col sm:flex-row items-center justify-between">
+    <div className="fixed top-0 left-0 right-0 z-50 bg-blue-600 text-white p-4 rounded-b-2xl shadow-md flex flex-col sm:flex-row items-center justify-between">
       <div className="text-center sm:text-left mb-2 sm:mb-0">
         <p className="text-lg font-semibold">Instale o Ithuta</p>
         <p className="text-sm">Adicione ao seu dispositivo para um acesso mais rápido</p>
