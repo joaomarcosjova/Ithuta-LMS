@@ -17,19 +17,13 @@ const InstallPrompt = () => {
       setDeferredPrompt(e);
       if (!isStandalone && isMobile) {
         setShowBanner(true);
-        setTimeout(() => setAnimate(true), 100); // allow animation to trigger
-        setTimeout(() => setShowBanner(false), 12000); // auto-hide after 12 seconds
+        setTimeout(() => setAnimate(true), 100); // trigger animation
+        setTimeout(() => setShowBanner(false), 12000); // auto-hide after 12s
       }
     };
 
     window.addEventListener("beforeinstallprompt", handleBeforeInstallPrompt);
-
-    return () => {
-      window.removeEventListener(
-        "beforeinstallprompt",
-        handleBeforeInstallPrompt
-      );
-    };
+    return () => window.removeEventListener("beforeinstallprompt", handleBeforeInstallPrompt);
   }, []);
 
   const handleInstall = async () => {
@@ -46,34 +40,24 @@ const InstallPrompt = () => {
     }
   };
 
-  const dismissBanner = () => setShowBanner(false);
-
   if (!showBanner) return null;
 
   return (
     <div
-      className={`fixed top-0 left-0 right-0 z-50 bg-blue-600 text-white p-4 rounded-b-2xl shadow-md flex flex-col sm:flex-row items-center justify-between transition-transform duration-500 ease-in-out ${
+      className={`fixed top-0 left-0 right-0 z-50 bg-blue-600 text-white px-4 py-2 flex items-center justify-between text-sm shadow-md transition-transform duration-500 ease-in-out ${
         animate ? "translate-y-0" : "-translate-y-full"
       }`}
     >
-      <div className="text-center sm:text-left mb-2 sm:mb-0">
-        <p className="text-lg font-semibold">Instale o Ithuta</p>
-        <p className="text-sm">Adicione ao seu dispositivo para um acesso mais rápido</p>
+      <div className="flex items-center gap-2">
+        <span className="font-semibold">Ithuta</span>
+        <span className="text-xs opacity-90">Adicione ao seu dispositivo</span>
       </div>
-      <div className="flex gap-2">
-        <button
-          onClick={handleInstall}
-          className="bg-white text-blue-600 px-4 py-2 rounded-xl font-medium hover:bg-blue-100 transition"
-        >
-          Instalar
-        </button>
-        <button
-          onClick={dismissBanner}
-          className="text-white px-4 py-2 rounded-xl hover:bg-blue-700 transition"
-        >
-          Fechar
-        </button>
-      </div>
+      <button
+        onClick={handleInstall}
+        className="bg-white text-blue-600 text-xs font-medium px-3 py-1 rounded-lg hover:bg-blue-100 transition"
+      >
+        Instalar
+      </button>
     </div>
   );
 };
