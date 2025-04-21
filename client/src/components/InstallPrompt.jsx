@@ -44,13 +44,13 @@ const InstallPrompt = () => {
 
   return (
     <div
-      className={`fixed top-0 left-0 right-0 z-50 bg-blue-600 text-white px-4 py-2 flex items-center justify-between text-sm shadow-md transition-transform duration-500 ease-in-out ${
+      className={`fixed top-0 left-0 right-0 z-50 bg-blue-600 text-white px-4 py-3 flex items-center justify-between text-sm shadow-md transition-transform duration-500 ease-in-out ${
         animate ? "translate-y-0" : "-translate-y-full"
       }`}
     >
-      <div className="flex items-center gap-2">
-        <span className="font-semibold">Ithuta</span>
-        <span className="text-xs opacity-90">Adicione ao seu dispositivo</span>
+      <div className="flex flex-col">
+        <span className="font-semibold text-base leading-none">Ithuta</span>
+        <span className="text-xs leading-none opacity-90">Adicione ao seu dispositivo</span>
       </div>
       <button
         onClick={handleInstall}
