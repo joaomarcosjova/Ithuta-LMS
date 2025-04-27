@@ -20,6 +20,7 @@ import time_left_clock_icon from './time_left_clock_icon.svg'
 import time_clock_icon from './time_clock_icon.svg'
 import user_icon from './user_icon.svg'
 import home_icon from './home_icon.svg'
+import explore_icon from './explore_icon.svg'
 import add_icon from './add_icon.svg'
 import my_course_icon from './my_course_icon.svg'
 import person_tick_icon from './person_tick_icon.svg'
@@ -79,6 +80,7 @@ export const assets = {
     time_clock_icon,
     user_icon,
     home_icon,
+    explore_icon,
     add_icon,
     my_course_icon,
     person_tick_icon,

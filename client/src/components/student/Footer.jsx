@@ -29,9 +29,9 @@ const Footer = () => {
 
           {/* Navigation Links */}
           <ul className="flex flex-wrap justify-center gap-6 text-sm text-blue-600">
-            <li><Link to="/course-list" className="hover:text-gray-800">Cursos</Link></li>
+            {/* <li><Link to="/course-list" className="hover:text-gray-800">Cursos</Link></li>
             <li><Link to="/mentors-list" className="hover:text-gray-800">Mentores</Link></li>
-            <li><Link to="/privacy-policy" className="hover:text-gray-800">Política de Privacidade</Link></li>
+            <li><Link to="/privacy-policy" className="hover:text-gray-800">Política de Privacidade</Link></li> */}
           </ul>
 
         </div>
