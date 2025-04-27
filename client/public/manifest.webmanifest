@@ -4,29 +4,24 @@
   "description": "Plataforma de aprendizagem moderna com cursos, desafios e mentores. Aprenda com facilidade em qualquer dispositivo.",
   "icons": [
     {
-      "src": "/icons/icon-192x192.png",
+      "src": "/web-app-manifest-192x192.png",
       "type": "image/png",
       "sizes": "192x192",
       "purpose": "any maskable"
     },
     {
-      "src": "/icons/icon-512x512.png",
+      "src": "/web-app-manifest-512x512.png",
       "type": "image/png",
       "sizes": "512x512",
       "purpose": "any maskable"
-    },
-    {
-      "src": "/icons/apple-touch-icon.png",
-      "type": "image/png",
-      "sizes": "180x180"
     }
   ],
   "start_url": "/?utm_source=homescreen",
   "scope": "/",
   "display": "standalone",
   "orientation": "portrait",
-  "background_color": "#ffffff",
-  "theme_color": "#1e40af",
+  "background_color": "#1e84f5",
+  "theme_color": "#fff",
   "lang": "pt",
   "dir": "ltr"
 }
