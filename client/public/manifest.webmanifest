@@ -1,7 +1,7 @@
 {
   "short_name": "Ithuta",
   "name": "Ithuta",
-  "description": "Plataforma de aprendizagem moderna com cursos, desafios e mentores. Aprenda com facilidade em qualquer dispositivo.",
+  "description": "Uma plataforma de aprendizagem moderna com cursos, desafios e mentores. Aprenda com facilidade em qualquer dispositivo.",
   "icons": [
     {
       "src": "/web-app-manifest-192x192.png",
