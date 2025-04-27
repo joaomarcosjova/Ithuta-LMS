@@ -21,7 +21,7 @@
   "display": "standalone",
   "orientation": "portrait",
   "background_color": "#1e84f5",
-  "theme_color": "#fff",
+  "theme_color": "#1e84f5",
   "lang": "pt",
   "dir": "ltr"
 }
