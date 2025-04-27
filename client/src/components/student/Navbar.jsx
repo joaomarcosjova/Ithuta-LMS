@@ -89,7 +89,7 @@ const Navbar = () => {
       </div>
 
       {/* ------------------------ MOBILE NAVBAR (BOTTOM) ------------------------ */}
-      <div className="fixed bottom-0 left-0 right-0 bg-white border-t border-gray-300 flex justify-around items-center py-2 md:hidden z-50 pb-safe">
+      <div className="fixed bottom-0 left-0 right-0 bg-white border-t border-gray-300 flex justify-around items-center py-2 md:hidden z-50 pb-4 pt-4">
         {/* Home Icon */}
         <button
           onClick={() => navigate("/")}
