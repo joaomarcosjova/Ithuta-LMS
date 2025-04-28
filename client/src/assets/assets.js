@@ -39,6 +39,7 @@ import profile_img from './profile_img.png'
 import profile_img2 from './profile_img2.png'
 import profile_img3 from './profile_img3.png'
 import lesson_icon from './lesson_icon.svg'
+import jobs_icon from './jobs_icon.svg'
    
 
 import excel from './excel.svg'
@@ -79,6 +80,7 @@ export const assets = {
     time_left_clock_icon,
     time_clock_icon,
     user_icon,
+    jobs_icon,
     home_icon,
     explore_icon,
     add_icon,

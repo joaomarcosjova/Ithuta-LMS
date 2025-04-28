@@ -89,7 +89,7 @@ const Navbar = () => {
       </div>
 
       {/* ------------------------ MOBILE NAVBAR (BOTTOM) ------------------------ */}
-      <div className="fixed bottom-0 left-0 right-0 bg-white border-t border-gray-300 flex justify-around items-center py-2 md:hidden z-50 pb-4 pt-4">
+      <div className="fixed bottom-0 left-0 right-0 bg-white border-t border-gray-300 flex justify-around items-center py-2 md:hidden z-50 p-safe">
         {/* Home Icon */}
         <button
           onClick={() => navigate("/")}
@@ -100,7 +100,7 @@ const Navbar = () => {
             alt="Home"
             className="w-6 h-6 transition-all duration-300"
           />
-          <span className="text-xs">Início</span>
+          <span className="text-xs">Explore</span>
         </button>
 
         {/* Courses Icon */}
@@ -116,20 +116,39 @@ const Navbar = () => {
           <span className="text-xs">Cursos</span>
         </button>
 
-        {/* Search Icon */}
+        {/* Add Course Icon */}
+
+        {/* Render "Educator Dashboard" button only for educators using short-circuit logic. {isEducator && ( code gos here )} */}
+
+        {isEducator && (
         <button
-          onClick={() => navigate("/search")}
+          onClick={() => navigate("/educator/add-course")}
+          className="flex flex-col items-center text-gray-600 hover:text-blue-600 text-xs"
+        >
+          <img
+            src={assets.add_icon}
+            alt="Poste"
+            className="w-6 h-6 transition-all duration-300"
+          />
+          Poste
+        </button>
+      )}
+
+        {/* Jobs Icon */}
+        <button
+          onClick={() => navigate("/jobs")}
           className="flex flex-col items-center text-gray-600 hover:text-blue-600"
         >
           <img
-            src={assets.search_icon}
-            alt="Buscar"
+            src={assets.jobs_icon}
+            alt="Empregos"
             className="w-6 h-6 transition-all duration-300"
           />
-          <span className="text-xs">Buscar</span>
+          <span className="text-xs">Empregos</span>
         </button>
 
         {/* Profile Icon */}
+
         {/* Sign In Button or User Button */}
 		
             <button
