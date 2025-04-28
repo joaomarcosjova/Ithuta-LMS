@@ -149,20 +149,51 @@ const Navbar = () => {
 
         {/* Profile Icon */}
 
-        {/* Sign In Button or User Button */}
-		
-            <button
-              onClick={() => openSignIn()}
-			  className="flex flex-col items-center text-gray-600 hover:text-blue-600"
-            >
-			{user ? ( <UserButton /> ) : (
 
-            <img src={assets.user_icon} alt="Perfil" className="w-6 h-6 transition-all duration-300"/>
-				)} 
+        <button
+          //  Button wrapper: handles openSignIn() if no user is logged in
+          onClick={() => {
+            if (!user) {
+              openSignIn();
+            }
+          }}
+          className="flex flex-col items-center text-gray-600 hover:text-blue-600"
+        >
 
-          	<span className="text-xs">Perfil</span>
-		  
-            </button>
+          {/* If no user is logged in, show user icon and Perfil label */}
+          {!user ? (
+            <>
+              <img
+                src={assets.user_icon}
+                alt="Perfil"
+                className="w-6 h-6 transition-all duration-300"
+              />
+            </>
+          
+          // If user is logged in and is an educator, show detailed UserButton with custom menu items for now the dashboard
+          ) : isEducator ? (
+            <UserButton>
+              <UserButton.MenuItems>
+                <UserButton.Action
+                  label="Dashboard"
+                  labelIcon={
+                    <img src={assets.home_icon} alt="Dashboard" className="w-5 h-5" />
+                  }
+                  onClick={() => navigate("/educator")}
+                />
+              </UserButton.MenuItems>
+            </UserButton>
+          
+          // If user is logged in but is not an educator, show simple UserButton
+          ) : (
+            <UserButton />
+          )}
+
+          {/* Label always shown below: Perfil */}
+          <span className="text-xs">Perfil</span>
+
+        </button>
+
 			
       </div>
     </>

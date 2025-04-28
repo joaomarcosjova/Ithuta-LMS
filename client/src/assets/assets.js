@@ -114,6 +114,7 @@ export const assets = {
 
 }
 
+
 export const dummyEducatorData = {
     "_id": "675ac1512100b91a6d9b8b24",
     "name": "GreatStack",
