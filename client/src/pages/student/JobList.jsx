@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useUser, useClerk } from "@clerk/clerk-react";
-import { dummyJobs } from "../../assets/assets"; // Adjust path to your dummyJobs file
+import { dummyJobs } from "../../assets/assets";
 import { motion, AnimatePresence } from "framer-motion";
 
 const modalBackdrop = {
@@ -10,67 +10,97 @@ const modalBackdrop = {
 };
 
 const modalContent = {
-  hidden: { opacity: 0, scale: 0.8 },
+  hidden: { opacity: 0, scale: 0.85 },
   visible: { opacity: 1, scale: 1 },
-  exit: { opacity: 0, scale: 0.8 },
+  exit: { opacity: 0, scale: 0.85 },
 };
 
 const JobList = () => {
-  const { isSignedIn, signIn } = useClerk();
+  const { openSignIn } = useClerk();
   const { user } = useUser();
   const [showModal, setShowModal] = useState(false);
+  const [searchTitle, setSearchTitle] = useState("");
 
   const handleApplyClick = (job) => {
-    if (!isSignedIn) {
-      signIn(); // Trigger Clerk login modal if user is not signed in
+    if (!user) {
+      openSignIn(); // Open Clerk modal sign-in
     } else {
-      setShowModal(true); // Show custom modal if the user is logged in
+      setShowModal(true);
     }
   };
 
+  const filteredJobs = dummyJobs.filter((job) =>
+    job.title.toLowerCase().includes(searchTitle.toLowerCase())
+  );
+
   return (
-    <section className="py-8">
+    <section className="py-10 pb-28 bg-gray-100 min-h-screen">
       <div className="container mx-auto px-4">
-        <h2 className="text-3xl font-bold text-center text-gray-800 mb-6">
+        <h2 className="text-4xl font-extrabold text-center text-gray-800 mb-10">
           Vagas de Emprego
         </h2>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-          {dummyJobs.map((job, index) => (
-            <div
-              key={index}
-              className="bg-white shadow-lg rounded-lg overflow-hidden"
-            >
-              <div className="p-6">
-                <h3 className="text-xl font-semibold text-gray-800 mb-2">
-                  {job.title}
-                </h3>
-                <p className="text-gray-600 mb-4">{job.company}</p>
-                <p className="text-gray-600 mb-2">{job.salary}</p>
-                <p className="text-gray-600 mb-4">{job.location}</p>
-                <p className="text-gray-700 mb-4">{job.description}</p>
-                <button
-                  onClick={() => handleApplyClick(job)}
-                  className="w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 px-4 rounded-lg transition"
-                >
-                  {isSignedIn ? "Aplicar Agora" : "Faça Login para Aplicar"}
-                </button>
-              </div>
-            </div>
-          ))}
+        {/* Search input */}
+        <div className="mb-8 max-w-md mx-auto">
+          <input
+            type="text"
+            placeholder="Filtrar por título de vaga..."
+            value={searchTitle}
+            onChange={(e) => setSearchTitle(e.target.value)}
+            className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500 text-sm"
+          />
         </div>
 
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+          {filteredJobs.length > 0 ? (
+            filteredJobs.map((job, index) => (
+              <div
+                key={index}
+                className="bg-white shadow-md rounded-2xl overflow-hidden border border-gray-200 transition hover:shadow-lg"
+              >
+                <div className="p-6">
+                  <h3 className="text-xl font-bold text-gray-800 mb-1">
+                    {job.title}
+                  </h3>
+                  <p className="text-blue-600 font-medium text-sm mb-2">{job.company}</p>
+                  <ul className="text-gray-600 text-sm space-y-1 mb-4">
+                    <li><strong>💰 Salário:</strong> {job.salary}</li>
+                    <li><strong>📍 Localização:</strong> {job.location}</li>
+                  </ul>
+                  <p className="text-gray-700 text-sm mb-4 line-clamp-4">
+                    {job.description}
+                  </p>
+
+                  <button
+                    onClick={() => handleApplyClick(job)}
+                    className="w-full bg-blue-600 hover:bg-blue-700 text-white text-sm font-medium py-2.5 px-4 rounded-lg transition focus:outline-none focus:ring-2 focus:ring-blue-500"
+                  >
+                    Aplicar Agora
+                  </button>
+                </div>
+              </div>
+            ))
+          ) : (
+            <p className="text-center col-span-3 text-gray-500 text-sm">
+              Nenhuma vaga encontrada com esse título.
+            </p>
+          )}
+        </div>
+
+        {/* Modal */}
         <AnimatePresence>
           {showModal && (
             <motion.div
-              className="fixed inset-0 z-50 bg-black/60 flex items-center justify-center"
+              className="fixed inset-0 z-50 bg-black/60 flex items-center justify-center px-4"
               variants={modalBackdrop}
               initial="hidden"
               animate="visible"
               exit="exit"
+              role="dialog"
+              aria-modal="true"
             >
               <motion.div
-                className="bg-white rounded-xl shadow-xl p-8 max-w-md w-full mx-4"
+                className="bg-white rounded-2xl shadow-2xl p-8 max-w-md w-full"
                 variants={modalContent}
                 initial="hidden"
                 animate="visible"
@@ -84,7 +114,7 @@ const JobList = () => {
                 </p>
                 <button
                   onClick={() => setShowModal(false)}
-                  className="w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 px-4 rounded-lg transition"
+                  className="w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2.5 px-4 rounded-lg transition focus:outline-none focus:ring-2 focus:ring-blue-500"
                 >
                   Fechar
                 </button>
