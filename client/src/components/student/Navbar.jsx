@@ -116,24 +116,6 @@ const Navbar = () => {
           <span className="text-xs">Cursos</span>
         </button>
 
-        {/* Add Course Icon */}
-
-        {/* Render "Educator Dashboard" button only for educators using short-circuit logic. {isEducator && ( code gos here )} */}
-
-        {isEducator && (
-        <button
-          onClick={() => navigate("/educator/add-course")}
-          className="flex flex-col items-center text-gray-600 hover:text-blue-600 text-xs"
-        >
-          <img
-            src={assets.add_icon}
-            alt="Poste"
-            className="w-6 h-6 transition-all duration-300"
-          />
-          Poste
-        </button>
-      )}
-
         {/* Jobs Icon */}
         <button
           onClick={() => navigate("/jobs")}
@@ -147,9 +129,8 @@ const Navbar = () => {
           <span className="text-xs">Empregos</span>
         </button>
 
+
         {/* Profile Icon */}
-
-
         <button
           //  Button wrapper: handles openSignIn() if no user is logged in
           onClick={() => {
