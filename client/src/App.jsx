@@ -20,7 +20,7 @@ import ContactForm from './components/ContactForm'
 
 import InstallPrompt from './components/InstallPrompt';
 
-import Jobs from './pages/student/Jobs';
+import JobList from './pages/student/JobList';
 
 // vercel page insight & optimization
 import { Analytics } from '@vercel/analytics/react';
@@ -53,7 +53,7 @@ const App = () => {
         <Route path='/privacy-policy' element={<About/>} />
         <Route path='/contact' element={<ContactForm/>} />
 
-        <Route path="/jobs" element={<Jobs />} />
+        <Route path="/job-list" element={<JobList/>} />
 
         <Route path='/educator' element={ <Educator />} >
             <Route path='/educator' element={<Dashboard />} />

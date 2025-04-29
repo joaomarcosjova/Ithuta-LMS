@@ -832,3 +832,209 @@ export const dummyMentors = [
     image: mentor3,
   },
 ];
+
+
+
+export const dummyJobs = [
+    {
+      title: "Engenheiro de Software",
+      company: "TechNova",
+      type: "Full-time",
+      salary: "R$ 10.000/mês",
+      location: "On-site (São Paulo, Brasil)",
+      remote: false,
+      description: "Responsável por desenvolver e manter aplicações web de alta performance.",
+      applyLink: "https://example.com/apply/tecnova-dev"
+    },
+    {
+      title: "Desenvolvedor Front-End",
+      company: "InovaWeb",
+      type: "Internship",
+      salary: "R$ 1.500/mês",
+      location: "Remote (Angola)",
+      remote: true,
+      description: "Estágio para desenvolvimento de interfaces responsivas com ReactJS.",
+      applyLink: "https://example.com/apply/inovaweb-front"
+    },
+    {
+      title: "Analista de Cibersegurança",
+      company: "SegurTI",
+      type: "Full-time",
+      salary: "R$ 9.000/mês",
+      location: "Remote",
+      remote: true,
+      description: "Monitorar e proteger sistemas contra ameaças e vulnerabilidades.",
+      applyLink: "https://example.com/apply/segurti-cyber"
+    },
+    {
+      title: "Designer UI/UX",
+      company: "Criativa",
+      type: "Part-time",
+      salary: "R$ 4.000/mês",
+      location: "On-site (Lisboa, Portugal)",
+      remote: false,
+      description: "Criação de interfaces intuitivas e experiência do usuário inovadora.",
+      applyLink: "https://example.com/apply/criativa-uiux"
+    },
+    {
+      title: "Gerente de Projetos",
+      company: "AgilPro",
+      type: "Full-time",
+      salary: "R$ 12.000/mês",
+      location: "Remote",
+      remote: true,
+      description: "Liderança de times ágeis e gerenciamento de entregas de software.",
+      applyLink: "https://example.com/apply/agilpro-pm"
+    },
+    {
+      title: "Engenheiro de Software",
+      company: "BitWorks",
+      type: "Full-time",
+      salary: "R$ 11.000/mês",
+      location: "Remote (Brasil)",
+      remote: true,
+      description: "Trabalho com microserviços e arquitetura em nuvem.",
+      applyLink: "https://example.com/apply/bitworks-dev"
+    },
+    {
+      title: "Desenvolvedor Back-End",
+      company: "DataCode",
+      type: "Full-time",
+      salary: "R$ 8.500/mês",
+      location: "On-site (Maputo, Moçambique)",
+      remote: false,
+      description: "Criação de APIs e manutenção de banco de dados escaláveis.",
+      applyLink: "https://example.com/apply/datacode-backend"
+    },
+    {
+      title: "Designer UI/UX",
+      company: "StudioCriar",
+      type: "Internship",
+      salary: "R$ 2.000/mês",
+      location: "Remote (Portugal)",
+      remote: true,
+      description: "Estágio com foco em design centrado no usuário e wireframes.",
+      applyLink: "https://example.com/apply/studiocriar-ux"
+    },
+    {
+      title: "Gerente de Projetos",
+      company: "MoveAgile",
+      type: "Part-time",
+      salary: "R$ 6.000/mês",
+      location: "Remote (Angola)",
+      remote: true,
+      description: "Coordenação de entregas ágeis para times distribuídos.",
+      applyLink: "https://example.com/apply/moveagile-pm"
+    },
+    {
+      title: "Desenvolvedor Front-End",
+      company: "PixelArt",
+      type: "Full-time",
+      salary: "R$ 7.500/mês",
+      location: "On-site (Luanda, Angola)",
+      remote: false,
+      description: "Desenvolvimento de componentes visuais em React e Tailwind.",
+      applyLink: "https://example.com/apply/pixelart-front"
+    },
+    {
+      title: "Analista de Cibersegurança",
+      company: "SecureNow",
+      type: "Full-time",
+      salary: "R$ 9.800/mês",
+      location: "Remote",
+      remote: true,
+      description: "Implementação de políticas de segurança em ambientes corporativos.",
+      applyLink: "https://example.com/apply/securenow-cyber"
+    },
+    {
+      title: "Engenheiro Mecânico",
+      company: "MecaGlobal",
+      type: "Full-time",
+      salary: "R$ 8.000/mês",
+      location: "On-site (Porto, Portugal)",
+      remote: false,
+      description: "Desenvolvimento e manutenção de sistemas mecânicos industriais.",
+      applyLink: "https://example.com/apply/mecaglobal-mech"
+    },
+    {
+      title: "Desenvolvedor Back-End",
+      company: "NextData",
+      type: "Part-time",
+      salary: "R$ 5.500/mês",
+      location: "Remote (Brasil)",
+      remote: true,
+      description: "Manutenção e testes automatizados de sistemas legados.",
+      applyLink: "https://example.com/apply/nextdata-back"
+    },
+    {
+      title: "Desenvolvedor Front-End",
+      company: "WebStart",
+      type: "Internship",
+      salary: "R$ 1.800/mês",
+      location: "On-site (Fortaleza, Brasil)",
+      remote: false,
+      description: "Aprendizado prático com HTML, CSS e React em projetos reais.",
+      applyLink: "https://example.com/apply/webstart-intern"
+    },
+    {
+      title: "Designer UI/UX",
+      company: "VisionCode",
+      type: "Full-time",
+      salary: "R$ 7.000/mês",
+      location: "Remote",
+      remote: true,
+      description: "Design de dashboards modernos e acessíveis.",
+      applyLink: "https://example.com/apply/visioncode-ux"
+    },
+    {
+      title: "Engenheiro Mecânico",
+      company: "AutoParts",
+      type: "Internship",
+      salary: "R$ 1.200/mês",
+      location: "On-site (Luanda, Angola)",
+      remote: false,
+      description: "Estágio técnico em manutenção de sistemas automotivos.",
+      applyLink: "https://example.com/apply/autoparts-mech"
+    },
+    {
+      title: "Analista de Cibersegurança",
+      company: "Firewall360",
+      type: "Full-time",
+      salary: "R$ 10.200/mês",
+      location: "Remote (Portugal)",
+      remote: true,
+      description: "Monitoramento de incidentes e resposta a ataques cibernéticos.",
+      applyLink: "https://example.com/apply/firewall360-cyber"
+    },
+    {
+      title: "Gerente de Projetos",
+      company: "ProjMaster",
+      type: "Full-time",
+      salary: "R$ 11.500/mês",
+      location: "On-site (Rio de Janeiro, Brasil)",
+      remote: false,
+      description: "Gestão de cronogramas, orçamentos e stakeholders.",
+      applyLink: "https://example.com/apply/projmaster-pm"
+    },
+    {
+      title: "Desenvolvedor Back-End",
+      company: "CodeNation",
+      type: "Full-time",
+      salary: "R$ 9.000/mês",
+      location: "Remote",
+      remote: true,
+      description: "Integração com serviços externos e microsserviços.",
+      applyLink: "https://example.com/apply/codenation-back"
+    },
+    {
+      title: "Desenvolvedor Front-End",
+      company: "NextUI",
+      type: "Part-time",
+      salary: "R$ 4.200/mês",
+      location: "Remote (Angola)",
+      remote: true,
+      description: "Criação de layouts modernos com Vue.js e Figma.",
+      applyLink: "https://example.com/apply/nextui-front"
+    }
+  ];
+  
