@@ -1,5 +1,7 @@
 import logo from './logo.png'
 import logo_dark from './logo_dark.png'
+import logo_app from './logo_app.svg'
+
 import search_icon from './search_icon.svg'
 import cross_icon from './cross_icon.svg'
 import upload_area from './upload_area.svg'
@@ -22,6 +24,7 @@ import user_icon from './user_icon.svg'
 import home_icon from './home_icon.svg'
 import explore_icon from './explore_icon.svg'
 import add_icon from './add_icon.svg'
+import menu_icon from './menu_icon.svg'
 import my_course_icon from './my_course_icon.svg'
 import person_tick_icon from './person_tick_icon.svg'
 import facebook_icon from './facebook_icon.svg'
@@ -76,6 +79,7 @@ export const assets = {
     cross_icon,
     upload_area,
     logo_dark,
+    logo_app,
     down_arrow_icon,
     time_left_clock_icon,
     time_clock_icon,
@@ -84,6 +88,7 @@ export const assets = {
     home_icon,
     explore_icon,
     add_icon,
+    menu_icon,
     my_course_icon,
     person_tick_icon,
     facebook_icon,

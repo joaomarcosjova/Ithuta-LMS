@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { assets } from "../assets/assets";  // Import your assets
 
 const InstallPrompt = () => {
   const [deferredPrompt, setDeferredPrompt] = useState(null);
@@ -47,12 +48,26 @@ const InstallPrompt = () => {
   if (!showBanner) return null;
 
   return (
-    <div className={`w-full bg-blue-600 text-white px-4 py-3 text-sm shadow-md transition-transform duration-500 ease-in-out z-50 ${animate ? "translate-y-0" : "-translate-y-full"}`}>
+    <div
+      className={`w-full bg-blue-600 text-white px-4 py-3 text-sm shadow-md transition-transform duration-500 ease-in-out z-50 ${
+        animate ? "translate-y-0" : "-translate-y-full"
+      }`}
+    >
       <div className="max-w-screen-xl mx-auto flex items-center justify-between">
-        <div className="flex flex-col">
-          <span className="font-semibold text-base leading-none">Ithuta</span>
-          <span className="text-xs leading-none opacity-90">Adicione ao seu dispositivo</span>
+        {/* Logo */}
+        <div className="flex items-center gap-2">
+          <img
+            src={assets.logo_app}  // Path to logo
+            alt="Logo"
+            className="w-8 h-8"  // Adjust the size of the logo
+          />
+          <div className="flex flex-col">
+            <span className="font-semibold text-base leading-none">Ithuta</span>
+            <span className="text-xs leading-none opacity-90">Adicione ao seu dispositivo</span>
+          </div>
         </div>
+
+        {/* Action Buttons */}
         <div className="flex items-center gap-2">
           <button
             onClick={dismissBanner}

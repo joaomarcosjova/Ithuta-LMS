@@ -1,12 +1,13 @@
 import React from "react";
-import { Link } from "react-router-dom";
-import {
-  FaFacebookF,
-  FaInstagram,
-  FaXTwitter,
-  FaGithub,
-  FaYoutube,
-} from "react-icons/fa6";
+// import { Link } from "react-router-dom";
+// import {
+//   FaWeebly,
+//   FaFacebookF,
+//   FaInstagram,
+//   FaXTwitter,
+//   FaGithub,
+//   FaYoutube,
+// } from "react-icons/fa6";
 
 const Footer = () => {
   return (
@@ -20,12 +21,12 @@ const Footer = () => {
           </h1>
 
           {/* Social Icons */}
-          <div className="flex justify-center gap-6 text-xl text-gray-800">
-            <a href="https://www.linkedin.com/in/joaomarcosjova/"><FaFacebookF className="hover:text-blue-600 transition" /></a>
+          {/* <div className="flex justify-center gap-6 text-xl text-gray-800">
+            <a href="https://www.linkedin.com/in/joaomarcosjova/"><FaWeebly className="hover:text-blue-600 transition" /></a>
             <a href="https://instagram.com/ithuta.app"><FaInstagram className="hover:text-blue-600 transition" /></a>
             <a href="#"><FaGithub className="hover:text-blue-600 transition" /></a>
             <a href="https://youtu.be/m2uSJS9Wx9Y"><FaYoutube className="hover:text-blue-600 transition" /></a>
-          </div>
+          </div> */}
 
           {/* Navigation Links */}
           <ul className="flex flex-wrap justify-center gap-6 text-sm text-blue-600">

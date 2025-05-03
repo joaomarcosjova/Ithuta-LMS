@@ -2,6 +2,7 @@ import { useState } from "react";
 import { useUser, useClerk } from "@clerk/clerk-react";
 import { dummyJobs } from "../../assets/assets";
 import { motion, AnimatePresence } from "framer-motion";
+import  Footer from "../../components/student/Footer";
 
 const modalBackdrop = {
   hidden: { opacity: 0 },
@@ -34,7 +35,8 @@ const JobList = () => {
   );
 
   return (
-    <section className="py-10 pb-28 bg-gray-100 min-h-screen">
+    <>
+    <section className="py-10 bg-white min-h-screen">
       <div className="container mx-auto px-4">
         <h2 className="text-4xl font-extrabold text-center text-gray-800 mb-10">
           Vagas de Emprego
@@ -124,6 +126,8 @@ const JobList = () => {
         </AnimatePresence>
       </div>
     </section>
+    <Footer />
+    </>
   );
 };
 
