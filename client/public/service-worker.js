@@ -5,8 +5,8 @@ const urlsToCache = [
   "/",
   "/index.html",
   "/manifest.webmanifest",
-  "/logo192.png",
-  "/logo512.png",
+  "/web-app-manifest-192x192.png",
+  "/web-app-manifest-512x512.png",
   "/offline.html" // Optional: a fallback offline page
 ];
 
@@ -69,7 +69,7 @@ self.addEventListener("fetch", (event) => {
           if (event.request.mode === "navigate") {
             return caches.match("/offline.html");
           }
-        });
+        }); 
     })
   );
 });
