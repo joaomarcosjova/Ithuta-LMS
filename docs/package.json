@@ -1,0 +1,25 @@
+{
+  "name": "vitepress-i18n-template",
+  "version": "1.0.0",
+  "description": "A VitePress template with i18n support by default.",
+  "repository": "pileax/vitepress-i18n-template",
+  "keywords": [
+    "vitepress",
+    "i18n",
+    "template"
+  ],
+  "author": "PileaX",
+  "license": "MIT",
+  "homepage": "",
+  "dependencies": {
+    "vue": "^3.2.0"
+  },
+  "devDependencies": {
+    "vitepress": "^1.6.3"
+  },
+  "scripts": {
+    "docs:dev": "vitepress dev",
+    "docs:build": "vitepress build",
+    "docs:preview": "vitepress preview"
+  }
+}

@@ -32,8 +32,8 @@ const Hero = () => {
         transition={{ duration: 0.8, ease: "easeOut" }}
         className="md:text-5xl text-3xl font-bold text-gray-800 max-w-3xl mx-auto relative leading-tight"
       >
-        Transforme sua carreira em{" "}
-        <span className="text-blue-600">Tecnologia</span>
+        Transforme sua {" "}
+        <span className="text-blue-600">carreira</span>
         <motion.img 
           src={assets.sketch} 
           alt="sketch" 
