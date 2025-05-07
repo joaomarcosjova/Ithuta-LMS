@@ -1,26 +1,11 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import { assets } from "../../assets/assets";
 import SearchBar from "./SearchBar";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion } from "framer-motion";
 
-const rotatingTexts = [
-  "Aprenda programação",
-  "Encontre seu proximo emprego",
-  "Aprenda marketing digital",
-  "Aprenda design UX/UI",
-  "Aprenda gestão de projetos",
-  "Aprenda desenvolvimento web",
-];
+
 
 const Hero = () => {
-  const [index, setIndex] = useState(0);
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setIndex((prev) => (prev + 1) % rotatingTexts.length);
-    }, 2500);
-    return () => clearInterval(interval);
-  }, []);
 
   return (
     <div className="flex flex-col items-center justify-center w-full md:pt-36 pt-20 px-7 md:px-0 space-y-7 text-center bg-gradient-to-b from-cyan-100/70 to-white transition-colors duration-300">
@@ -30,10 +15,10 @@ const Hero = () => {
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8, ease: "easeOut" }}
-        className="md:text-5xl text-3xl font-bold text-gray-800 max-w-3xl mx-auto relative leading-tight"
+        className="md:text-5xl text-2xl font-bold text-gray-800 max-w-3xl mx-auto relative leading-tight"
       >
-        Transforme sua {" "}
-        <span className="text-blue-600">carreira</span>
+        Encontre cursos, empregos e muito mais com {" "}
+        <span className="text-blue-600">Ithuta</span>
         <motion.img 
           src={assets.sketch} 
           alt="sketch" 
@@ -44,20 +29,6 @@ const Hero = () => {
         />
       </motion.h1>
 
-      {/* Rotating Subtitle */}
-      <AnimatePresence mode="wait">
-        <motion.p
-          key={rotatingTexts[index]}
-          initial={{ opacity: 0, y: 10 }}
-          animate={{ opacity: 1, y: 0 }}
-          exit={{ opacity: 0, y: -10 }}
-          transition={{ duration: 0.5 }}
-          className="text-blue-700 text-lg font-medium"
-        >
-          {rotatingTexts[index]}
-
-        </motion.p>
-      </AnimatePresence>
 
       {/* Description (desktop) */}
       <motion.p

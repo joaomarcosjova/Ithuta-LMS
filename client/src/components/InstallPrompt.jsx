@@ -39,14 +39,19 @@ const InstallPrompt = () => {
 
   const handleInstall = async () => {
     if (deferredPrompt) {
+      setShowModal(false); // Always close the modal
+      document.body.style.overflow = "";
+
       deferredPrompt.prompt();
       const choiceResult = await deferredPrompt.userChoice;
+
       if (choiceResult.outcome === "accepted") {
-        triggerConfetti();
+        setTimeout(() => {
+          triggerConfetti();
+        }, 1500);
       }
-      setDeferredPrompt(null);
-      setShowModal(false);
-      document.body.style.overflow = "";
+
+      setDeferredPrompt(null); // Clear prompt reference regardless
     }
   };
 
@@ -59,14 +64,14 @@ const InstallPrompt = () => {
 
   const triggerConfetti = () => {
     confetti({
-      particleCount: 150,
+      particleCount: 200,
       spread: 100,
       origin: { y: 0.6 },
     });
   };
 
   return (
-    <AnimatePresence>
+     <AnimatePresence>
       {showModal && (
         <motion.div
           id="modal-backdrop"
