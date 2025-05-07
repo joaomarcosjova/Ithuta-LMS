@@ -88,7 +88,7 @@ const InstallPrompt = () => {
             exit={{ scale: 0.8, opacity: 0 }}
           >
             <img src={assets.logo_app} alt="Logo" className="w-12 h-12 mx-auto mb-3" />
-            <h2 className="text-lg font-semibold text-gray-800 mb-1">Instale o Ithuta</h2>
+            <h2 className="text-lg font-semibold text-gray-800 mb-1">Continuar no app</h2>
             <p className="text-sm text-gray-600 mb-6">
               Para uma experiência mais rápida, segura e completa, adicione o Ithuta à sua tela inicial.
             </p>
@@ -96,7 +96,7 @@ const InstallPrompt = () => {
               onClick={handleInstall}
               className="w-full px-4 py-2 text-sm rounded-lg bg-blue-600 text-white hover:bg-blue-700"
             >
-              Instalar
+              Abrir app
             </button>
           </motion.div>
         </motion.div>
