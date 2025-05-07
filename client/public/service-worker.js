@@ -6,6 +6,7 @@ const urlsToCache = [
   "/index.html",
   "/manifest.webmanifest",
   "/web-app-manifest-192x192.png",
+  "/web-app-manifest-256x256.png",
   "/web-app-manifest-512x512.png",
   "/offline.html" // Optional: a fallback offline page
 ];

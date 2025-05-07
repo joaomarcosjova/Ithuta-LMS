@@ -10,6 +10,12 @@
       "purpose": "any maskable"
     },
     {
+      "src": "/web-app-manifest-256x256.png",
+      "type": "image/png",
+      "sizes": "192x192",
+      "purpose": "any maskable"
+    },
+    {
       "src": "/web-app-manifest-512x512.png",
       "type": "image/png",
       "sizes": "512x512",
