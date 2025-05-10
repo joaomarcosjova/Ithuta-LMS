@@ -62,9 +62,9 @@ const MyEnrollments = () => {
   if (enrolledCourses.length === 0) {
     return (
       <div className="flex flex-col items-center justify-center min-h-screen text-center px-4 py-10 bg-gray-50">
-        <h2 className="text-2xl font-bold text-gray-800">Você ainda não está matriculado em nenhum curso</h2>
+        <h2 className="text-2xl font-bold text-gray-800">Parece que você não está matriculado em nenhum curso</h2>
         <p className="mt-3 text-gray-500 max-w-md">
-          Descubra nossa variedade de cursos e comece sua jornada de aprendizado agora mesmo!
+         Após se inscrever em um curso, você poderá acompanhar seu progresso por aqui.
         </p>
         <Link
           to="/course-list"
