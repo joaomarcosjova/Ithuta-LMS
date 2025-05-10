@@ -105,7 +105,7 @@ const Navbar = () => {
 
         {/* Courses Icon */}
         <button
-          onClick={() => navigate("/course-list")}
+          onClick={() => navigate("/my-enrollments")}
           className="flex flex-col items-center text-gray-600 hover:text-blue-600"
         >
           <img
